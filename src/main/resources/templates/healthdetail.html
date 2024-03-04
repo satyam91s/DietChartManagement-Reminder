@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Health Information Form</title>
+<link rel="stylesheet" href="Css/healthdetail.css">
+</head>
+<body>
+<form action="#" th:action="@{/healthsave}" th:object="${healthdetail}" method="POST">
+    <label for="id">ID :</label> 
+    <input type="number" th:field="*{id}" id="id" name="id" required>
+
+    <label for="height">Height (in cm):</label>
+    <input type="number" th:field="*{height}" id="height" name="height" required>
+    
+    <label for="weight">Weight (in kg):</label>
+    <input type="number" th:field="*{weight}" id="weight" name="weight" required>
+    
+    <label for="age">Age:</label>
+    <input type="number" th:field="*{age}" id="age" name="age" required>
+    
+    <label for="healthGoal">Health Goal:</label>
+    <select id="healthGoal" th:field="*{healthgoal}" name="healthGoal" required>
+        <option value="">Select Health Goal</option>
+        <option value="lose_weight">Lose Weight</option>
+        <option value="gain_muscle">Gain Muscle</option>
+        <option value="improve_fitness">Improve Fitness</option>
+        <!-- Add more health goal options as needed -->
+    </select>
+    
+    <label for="healthCondition">Health Condition:</label>
+    <select id="healthCondition" th:field="*{healthcondition}" name="healthCondition" required>
+        <option value="">Select Health Condition</option>
+        <option value="diabetes">Diabetes</option>
+        <option value="hypertension">Hypertension</option>
+        <option value="asthma">Asthma</option>
+        <!-- Add more health condition options as needed -->
+    </select>
+    
+    <label for="location">Location:</label>
+    <select id="location" th:field="*{location}" name="location" required>
+        <option value="">Select Location</option>
+        <option value="New York">New York</option>
+        <option value="Los Angeles">Los Angeles</option>
+        <option value="Chicago">Chicago</option>
+        <option value="Houston">Houston</option>
+        <!-- Add more location options as needed -->
+    </select>
+    
+    <input type="submit" value="Submit">
+</form>
+</body>
+</html>
