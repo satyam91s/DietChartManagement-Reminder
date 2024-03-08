@@ -26,12 +26,11 @@ public class mycontroller {
     @Autowired
     healthdetailservice hr;
 
-
-    
     @RequestMapping("/")
-    public String home(){
+    public String home() {
         return "home";
     }
+
     @GetMapping("/profile")
     public String viewHomePage(Model model) {
         model.addAttribute("allemplist", bs.getAllEmployee());
@@ -41,15 +40,17 @@ public class mycontroller {
     // User details controller start
 
     @GetMapping("/register")
-     public String RegistrationForm(Model model) {
-    model.addAttribute("user", new user());
-    return "register";
-}
+    public String RegistrationForm(Model model) {
+        model.addAttribute("user", new user());
+        return "register";
+    }
+
     @GetMapping("/login")
-     public String LoginForm(Model model) {
-    model.addAttribute("user", new user());
-    return "login";
-}
+    public String LoginForm(Model model) {
+        model.addAttribute("user", new user());
+        return "login";
+    }
+
     @PostMapping("/save")
     public String saveEmployee(@ModelAttribute("user") user user) {
         bs.save(user);
@@ -67,40 +68,60 @@ public class mycontroller {
     }
 
     @GetMapping("/doctorregister")
-     public String RegistrationDoctor(Model model) {
-    model.addAttribute("doctor", new doctor());
-    return "doctorregister";
-}
+    public String RegistrationDoctor(Model model) {
+        model.addAttribute("doctor", new doctor());
+        return "doctorregister";
+    }
+
     @GetMapping("/doctorlogin")
-     public String LoginDoctor(Model model) {
-    model.addAttribute("doctor", new doctor());
-    return "login";
-}
+    public String LoginDoctor(Model model) {
+        model.addAttribute("doctor", new doctor());
+        return "doctorlogin";
+    }
+    @GetMapping("/userlogin")
+    public String Loginuser(Model model) {
+        model.addAttribute("doctor", new doctor());
+        return "login";
+    }
+
     @GetMapping("/about")
-     public String about() {
-    
-    return "about";
-}
+    public String about() {
+
+        return "about";
+    }
+
+    @GetMapping("/homedoctor")
+    public String doctorhome() {
+
+        return "doctorhome";
+    }
+
+    @GetMapping("/blog")
+    public String blog() {
+
+        return "blog";
+    }
+
     @GetMapping("/contact")
-     public String contact() {
-    
-    return "contact";
-}
+    public String contact() {
 
-// Doctor detail controller end
+        return "contact";
+    }
 
-// Health detail controller start
-@PostMapping("/healthsave")
+    // Doctor detail controller end
+
+    // Health detail controller start
+    @PostMapping("/healthsave")
     public String healthsave(@ModelAttribute("healthdetail") healthdetail healthdetail) {
         hr.save(healthdetail);
         return "redirect:/";
     }
 
     @GetMapping("/healthform")
-     public String healthform(Model model) {
-    model.addAttribute("healthdetail", new healthdetail());
-    return "healthdetail";
-}
-// Health detail controller end
-    
+    public String healthform(Model model) {
+        model.addAttribute("healthdetail", new healthdetail());
+        return "healthdetail";
+    }
+    // Health detail controller end
+
 }

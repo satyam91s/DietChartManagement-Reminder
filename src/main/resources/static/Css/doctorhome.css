@@ -468,6 +468,8 @@ button:hover {
   border-style: solid;
   border-left: #fff;
   border-right: #fff;
+  display: flex;
+  
 
 }
 
@@ -485,38 +487,6 @@ button:hover {
   width: 100%;
   height: auto;
   
-
-}
-.typingeffect {
-  display: flex;
-  justify-items: center;
-  align-content: center;
-  row-gap: 20px;
-  background-color: #ffffffdb;
-
-}
-
-.typingeffect h1 {
-  margin-top: 210px;
-  margin-left: 120px;
-}
-
-#const {
-  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-  font-size: 50px;
-  margin-bottom: 30px;
-  margin-top: 10px;
-  text-align: center;
-
-}
-
-#demo {
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  font-weight: 500;
-  font-size: 30px;
-  color: rgb(51, 35, 35);
-  margin-left: 20px;
-
 
 }
 
@@ -590,6 +560,38 @@ button:hover {
   text-align: center;
 }
 /* Dietian overview end */
+.typingeffect {
+  display: flex;
+  justify-items: center;
+  align-content: center;
+  row-gap: 20px;
+  background-color: #ffffffdb;
+
+}
+
+.typingeffect h1 {
+  margin-top: 210px;
+  margin-left: 120px;
+}
+
+#const {
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  font-size: 50px;
+  margin-bottom: 30px;
+  margin-top: 10px;
+  text-align: center;
+
+}
+
+#demo {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  font-weight: 500;
+  font-size: 30px;
+  color: rgb(51, 35, 35);
+  margin-left: 20px;
+
+
+}
 /* footer starts */
 footer {
   background-color: #333;

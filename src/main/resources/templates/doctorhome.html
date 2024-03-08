@@ -4,9 +4,10 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="Css/home.css">
+  
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@48,400,0,0" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <link rel="stylesheet" href="Css/doctorhome.css">
   <title>www.SmartDietary.com</title>
 </head>
 
@@ -39,7 +40,7 @@
       </nav>
       <nav class="nav2">
         <ul>
-          <li><a href="/">Home</a></li>
+          <li><a href="/homedoctor">Home</a></li>
 
           <li class="dropdown">
             <a href="#">Services</a>
@@ -47,24 +48,24 @@
           </li>
 
           <li class="dropdown">
-            <a href="#">Diet Expertise</a>
+            <a href="#">Patients</a>
           </li>
 
           <li class="dropdown">
             <a href="blog">Health Blog</a>
             
           </li>
-          <li class="dropdown">
+          <!-- <li class="dropdown">
             <a href="doctorlogin">Doctors Panel</a>
             
-          </li>
+          </li> -->
 
 
           <li><a href="about">About</a></li>
           <li><a href="contact">Contact Us</a></li>
         </ul>
         <div class="buttons">
-          <a href="userlogin"><button>Sign In</button></a>
+          <a href="login"><button>Sign In</button></a>
           <a href="register"><button>Sign Up</button></a>
         </div>
       </nav>
@@ -160,24 +161,24 @@
       <h1>Features</h1>
       <div class="container">
           <div class="card">
-              <h2>Diet Generator</h2>
+              <h2>Patient Information</h2>
               <img src="https://thumbs.dreamstime.com/z/black-good-diet-isolated-vector-icon-simple-element-illustration-gym-fitness-concept-icons-editable-logo-symbol-design-143597236.jpg" alt="">
               <p class="content">Generate custom diet plans based on your preferences and requirements.</p>
-              <a href="login">Get Started</a>
+              <a href="login">Check It</a>
           </div>
   
           <div class="card">
-              <h2>Reminder System</h2>
+              <h2>Patient Requests</h2>
               <img src="https://vectorified.com/images/reminder-icon-png-4.png" alt="">
               <p class="content">Set reminders for your meals, workouts, or any other important tasks.</p>
-              <a href="#reminder">Set Reminder</a>
+              <a href="#reminder">Check It</a>
           </div>
   
           <div class="card">
-              <h2>Consultants</h2>
+              <h2>Appointments</h2>
               <img src="https://th.bing.com/th/id/R.81269e874243743d46cdefea1863db82?rik=1bWzxvj1HSZToA&riu=http%3a%2f%2fwww.clipartbest.com%2fcliparts%2f9Tz%2fLEr%2f9TzLErg8c.png&ehk=%2fBiJwzGMHdqTWSP2YgTBSlkvI7taCv7EawW%2b4G8q0zc%3d&risl=&pid=ImgRaw&r=0" alt="">
               <p class="content">Connect with our expert consultants for personalized advice and guidance.</p>
-              <a href="#">Find Consultant</a>
+              <a href="#">Check It</a>
           </div>
   
           <div class="card">
@@ -196,68 +197,68 @@
         <div class="video-container">
           <h2>Watch Our Video</h2>
             <video controls autoplay>
-                <source src="video/v1.mp4"Image/do2.jpg</h1></div>
+                <source src="video/v1.mp4"Image/do2.jpg</h1></div> 
                 <div class="typingeffect">
-                  <h1> <span id="const">SmartDietary</span> <br><span id="demo"></span></h1>
+                    <h1> <span id="const">SmartDietary</span> <br><span id="demo"></span></h1>
 
 
-                  <script>
-                      const textArray = [
-                          "One to One Interaction with Dietian",
-                          "Make Your Healthy Lifestyle",
-                          "Take Care Your Daily Meal by Reminder  ",
-                          // Add more lines as needed
-                      ];
+                    <script>
+                        const textArray = [
+                            "One to One Interaction with Dietian",
+                            "Make Your Healthy Lifestyle",
+                            "Take Care Your Daily Meal by Reminder  ",
+                            // Add more lines as needed
+                        ];
 
-                      let lineIndex = 0;
-                      let charIndex = 0;
-                      let isReversing = false;
+                        let lineIndex = 0;
+                        let charIndex = 0;
+                        let isReversing = false;
 
-                      function typeWriter() {
-                          const currentLine = textArray[lineIndex];
+                        function typeWriter() {
+                            const currentLine = textArray[lineIndex];
 
-                          if (!isReversing) {
-                              if (charIndex < currentLine.length) {
-                                  document.getElementById("demo").innerHTML += currentLine.charAt(charIndex);
-                                  charIndex++;
-                                  setTimeout(typeWriter, 90); // Adjust the speed as needed
-                              } else {
-                                  isReversing = true;
-                                  setTimeout(typeWriter, 1000); // Delay before reversing
-                              }
-                          } else {
-                              if (charIndex > 0) {
-                                  document.getElementById("demo").innerHTML = currentLine.substring(0, charIndex - 1);
-                                  charIndex--;
-                                  setTimeout(typeWriter, 50); // Adjust the speed as needed
-                              } else {
-                                  isReversing = false;
-                                  lineIndex++;
-                                  if (lineIndex >= textArray.length) {
-                                      lineIndex = 0; // Loop back to the first line
-                                  }
-                                  setTimeout(typeWriter, 500); // Delay before typing next line
-                              }
-                          }
-                      }
+                            if (!isReversing) {
+                                if (charIndex < currentLine.length) {
+                                    document.getElementById("demo").innerHTML += currentLine.charAt(charIndex);
+                                    charIndex++;
+                                    setTimeout(typeWriter, 90); // Adjust the speed as needed
+                                } else {
+                                    isReversing = true;
+                                    setTimeout(typeWriter, 1000); // Delay before reversing
+                                }
+                            } else {
+                                if (charIndex > 0) {
+                                    document.getElementById("demo").innerHTML = currentLine.substring(0, charIndex - 1);
+                                    charIndex--;
+                                    setTimeout(typeWriter, 50); // Adjust the speed as needed
+                                } else {
+                                    isReversing = false;
+                                    lineIndex++;
+                                    if (lineIndex >= textArray.length) {
+                                        lineIndex = 0; // Loop back to the first line
+                                    }
+                                    setTimeout(typeWriter, 500); // Delay before typing next line
+                                }
+                            }
+                        }
 
-                      typeWriter();
-                  </script>
-              </div>
-              </section>
+                        typeWriter();
+                    </script>
+                </div>
+            </section>
     <section class="image-description-section">
       <div class="image-container">
           <img src="Image/f2.jpg" alt="Image Description">
       </div>
       <div class="description-container">
-          <h2>Diet Management and Planning</h2>
+          <h2>Patient Information with their Diet Plan</h2>
           <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla nec lectus eu urna viverra congue. Vestibulum vitae leo sed nisi lacinia lobortis vel a nunc. Morbi rhoncus, ipsum nec convallis ultrices, felis leo ultricies justo, sit amet interdum nisi justo non libero.</p>
           <a href="#">Explore</a>
       </div>
   </section>
   <section class="image-description-section">
     <div class="description-container">
-      <h2>Track Your Plan With Reminder System</h2>
+      <h2>Notification from Patients for Diet Plan Generation</h2>
       <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla nec lectus eu urna viverra congue. Vestibulum vitae leo sed nisi lacinia lobortis vel a nunc. Morbi rhoncus, ipsum nec convallis ultrices, felis leo ultricies justo, sit amet interdum nisi justo non libero.</p>
       <a href="#">Explore</a>
   </div>
@@ -271,7 +272,7 @@
       <img src="Image/f4.jpg" alt="Image Description">
   </div>
   <div class="description-container">
-      <h2>Connect with Diet Specialist in Your Location</h2>
+      <h2>Appointments Tracking</h2>
       <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla nec lectus eu urna viverra congue. Vestibulum vitae leo sed nisi lacinia lobortis vel a nunc. Morbi rhoncus, ipsum nec convallis ultrices, felis leo ultricies justo, sit amet interdum nisi justo non libero.</p>
       <a href="#">Explore</a>
   </div>

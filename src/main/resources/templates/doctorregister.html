@@ -11,7 +11,7 @@
 <body>
     <section class="container">
         <header>Personal Information</header>
-        <form action="#" class="form" th:action="@{/doctorsave}" th:object="${doctor}" method="POST">
+        <form  action="#" class="form registrationForm" th:action="@{/doctorsave}" th:object="${doctor}" method="POST">
             <div class="column">
                 <div class="input-box">
                     <label>Full Name</label>
@@ -136,9 +136,30 @@
 
                 </div>
             </div>
-            <button>Submit</button>
+            <button type="submit" class="register">Submit</button>
             <h3>If you already Registered, then  <a href="/login">Sign In</a></h3>
         </form>
+        <div class="popup-overlay" id="popup">
+            <div class="popup-content">
+                <h2>Thank you for registering!</h2>
+                <p>Welcome to our platform.</p>
+                <button class="button" id="okButton">OK</button>
+            </div>
+        </div>
+        
+        <script>
+            // JavaScript to show the popup after form submission
+            document.getElementById('registrationForm').addEventListener('submit', function(event) {
+                event.preventDefault(); // Prevent form submission
+                var popup = document.getElementById('popup');
+                popup.style.display = 'flex';
+            });
+        
+            // JavaScript to handle OK button click and redirect to login page
+            document.getElementById('okButton').addEventListener('click', function() {
+                window.location.href = 'userlogin'; // Change 'login.html' to the actual URL of your login page
+            });
+        </script>
     </section>
 </body>
 
