@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>SmartDietary</title>
+    <link rel="stylesheet" href="Css/welcome.css" />
+  </head>
+  <body>
+    <!-- <h1>Welcome to SmartDietary</h1> -->
+    <div class="typingeffect">
+        <h1> <span id="const"></span> <br><span id="demo"></span></h1>
+
+
+        <script>
+            const textArray = [
+                "Welcome to the SmartDietary"
+            ];
+
+            let lineIndex = 0;
+            let charIndex = 0;
+            let isReversing = false;
+
+            function typeWriter() {
+                const currentLine = textArray[lineIndex];
+
+                if (!isReversing) {
+                    if (charIndex < currentLine.length) {
+                        document.getElementById("demo").innerHTML += currentLine.charAt(charIndex);
+                        charIndex++;
+                        setTimeout(typeWriter, 120); // Adjust the speed as needed
+                    } else {
+                        isReversing = true;
+                        setTimeout(typeWriter, 5000); // Delay before reversing
+                    }
+                } else {
+                    if (charIndex > 0) {
+                        document.getElementById("demo").innerHTML = currentLine.substring(0, charIndex - 1);
+                        charIndex--;
+                        setTimeout(typeWriter, 50); // Adjust the speed as needed
+                    } else {
+                        isReversing = false;
+                        lineIndex++;
+                        if (lineIndex >= textArray.length) {
+                            lineIndex = 0; // Loop back to the first line
+                        }
+                        setTimeout(typeWriter, 500); // Delay before typing next line
+                    }
+                }
+            }
+
+            typeWriter();
+        </script>
+    </div>
+    <div class="container">
+        
+      <div class="square"></div>
+    </div>
+    <script>
+        setTimeout(function() {
+            window.location.href = "/home"; // Redirect to home page after 3 seconds
+        }, 5000);
+    </script>
+  </body>
+</html>

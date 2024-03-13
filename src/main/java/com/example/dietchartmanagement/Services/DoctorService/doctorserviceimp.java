@@ -1,4 +1,4 @@
-package com.example.dietchartmanagement.Services;
+package com.example.dietchartmanagement.Services.DoctorService;
 
 import java.util.List;
 

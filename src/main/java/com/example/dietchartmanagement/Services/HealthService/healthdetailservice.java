@@ -1,4 +1,4 @@
-package com.example.dietchartmanagement.Services;
+package com.example.dietchartmanagement.Services.HealthService;
 
 import java.util.List;
 import java.util.Optional;

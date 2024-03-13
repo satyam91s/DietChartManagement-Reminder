@@ -13,9 +13,9 @@ import org.springframework.web.bind.annotation.ResponseBody;
 import com.example.dietchartmanagement.Beans.doctor;
 import com.example.dietchartmanagement.Beans.healthdetail;
 import com.example.dietchartmanagement.Beans.user;
-import com.example.dietchartmanagement.Services.doctorservice;
-import com.example.dietchartmanagement.Services.healthdetailservice;
 import com.example.dietchartmanagement.Services.userservice;
+import com.example.dietchartmanagement.Services.DoctorService.doctorservice;
+import com.example.dietchartmanagement.Services.HealthService.healthdetailservice;
 
 @Controller
 public class mycontroller {
@@ -27,7 +27,11 @@ public class mycontroller {
     healthdetailservice hr;
 
     @RequestMapping("/")
-    public String home() {
+    public String welcome() {
+        return "welcome";
+    }
+    @RequestMapping("/home")
+    public String home(){
         return "home";
     }
 
@@ -61,39 +65,17 @@ public class mycontroller {
 
     // Doctor details controller start
 
-    @PostMapping("/doctorsave")
-    public String savedoctor(@ModelAttribute("doctor") doctor doctor) {
-        ds.save(doctor);
-        return "redirect:/";
-    }
-
-    @GetMapping("/doctorregister")
-    public String RegistrationDoctor(Model model) {
-        model.addAttribute("doctor", new doctor());
-        return "doctorregister";
-    }
-
-    @GetMapping("/doctorlogin")
-    public String LoginDoctor(Model model) {
-        model.addAttribute("doctor", new doctor());
-        return "doctorlogin";
-    }
-    @GetMapping("/userlogin")
-    public String Loginuser(Model model) {
-        model.addAttribute("doctor", new doctor());
-        return "login";
-    }
+    
 
     @GetMapping("/about")
     public String about() {
 
         return "about";
     }
+    @GetMapping("/service")
+    public String service() {
 
-    @GetMapping("/homedoctor")
-    public String doctorhome() {
-
-        return "doctorhome";
+        return "services";
     }
 
     @GetMapping("/blog")
@@ -124,4 +106,9 @@ public class mycontroller {
     }
     // Health detail controller end
 
+    //test
+    @GetMapping("/test")
+    public String test(){
+        return "navbar";
+    }
 }

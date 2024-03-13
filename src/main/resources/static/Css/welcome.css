@@ -1,0 +1,46 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+  }
+  body {
+    background-color: #0091ff;
+  }
+  .container {
+    height: 350px;
+    width: 350px;
+    position: absolute;
+    transform: translate(-50%, -50%);
+    top: 62%;
+    left: 50%;
+    perspective: 800px;
+  }
+   h1{
+    color: aliceblue;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 194px;
+    font-size: 57px;
+  }
+  .square {
+    height: 200px;
+    width: 200px;
+    background-color: #ffffff;
+    position: absolute;
+    margin: auto;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    transform-style: preserve-3d;
+    animation: spin 2s infinite;
+  }
+  @keyframes spin {
+    50% {
+      transform: rotateX(-180deg);
+    }
+    100% {
+      transform: rotateX(-180deg) rotateY(-180deg);
+    }
+  }
