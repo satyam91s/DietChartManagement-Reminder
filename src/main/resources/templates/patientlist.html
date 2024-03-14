@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="https://thymeleaf.org" >
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SmartDietary</title>
+    <link rel="stylesheet" href="Css/patientlist.css">
+</head>
+
+<body>
+
+    <header>
+        <section th:insert="navbar">
+
+        </section>
+    </header>
+    <main class="mainpatient">
+        <section class="left-section">
+
+            <section>
+                <div>
+                    <h1>
+                        Request for Connect
+                    </h1>
+                </div>
+                <div class="patientcard">
+                    <img src="https://th.bing.com/th/id/OIP.GHGGLYe7gDfZUzF_tElxiQHaHa?w=200&h=200&c=7&r=0&o=5&cb=10&dpr=1.1&pid=1.7" alt="img">
+                    <div class="content">
+                        <h2> Ram</h2>
+                        <button class="appointment-button">Accept</button>
+                        <button class="view-profile-button">Delete</button>
+
+                    </div>
+
+                </div>
+
+            </section>
+            <section >
+
+                <div>
+                    <h1>
+                        Connected
+                    </h1>
+                </div>
+                <div class="patientcard" th:each="patient:${allpatientlist}">
+                    <img src="https://th.bing.com/th/id/OIP.GHGGLYe7gDfZUzF_tElxiQHaHa?w=200&h=200&c=7&r=0&o=5&cb=10&dpr=1.1&pid=1.7" alt="img">
+                    <div class="content">
+                        <h2 th:text="${patient.name}"></h2>
+                        <button class="appointment-button">Following</button>
+                        <button class="view-profile-button">Remove</button>
+
+                    </div>
+
+                </div>
+
+            </section>
+
+        </section>
+        <section class="right-section">
+            <h1>
+               
+            </h1>
+        </section>
+
+    </main>
+
+
+</body>
+
+</html>

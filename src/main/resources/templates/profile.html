@@ -32,7 +32,6 @@
         <tr th:each="employee:${allemplist}">
                 <td th:text="${employee.name}"></td>
                 <td th:text="${employee.email}"></td>
-                <td th:text="${employee.password}"></td>
                 <td th:text="${employee.role}"></td>
                 <td th:text="${employee.mobile}"></td>
                 <td th:text="'USER'+${employee.id}+'HEALTH'"></td>

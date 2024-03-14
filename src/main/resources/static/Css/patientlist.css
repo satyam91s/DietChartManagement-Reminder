@@ -1,0 +1,45 @@
+.patientcard {
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgb(0 0 0 / 41%);
+    /* Adjust shadow as needed */
+    padding: 20px;
+    width: 60%;
+    /* Adjust width as needed */
+    margin-left: 5%;
+    margin-top: 3%;
+    padding-right: 175px;
+
+    display: flex;
+    align-items: center;
+}
+.patientcard-content{
+    display: flex;
+  flex-grow: 1; /* Allow the content div to grow */
+  justify-content: space-between; /* Distribute content evenly */
+  
+}
+.patientcard img {
+    max-width: 60px; /* Adjust image size as needed */
+    margin-right: 15px;
+  }
+.mainpatient{
+  display: flex;
+}
+.left-section {
+  flex: 2; /* Make left section flexible */
+  padding: 20px; /* Optional: Add padding for spacing */
+}
+
+.right-section {
+  flex: 1; /* Make right section flexible */
+  padding: 20px; /* Optional: Add padding for spacing */
+}
+.content button{
+
+  margin-left: 10px;
+
+}
+.content h2{
+  margin-left: 10px;
+}

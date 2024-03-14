@@ -8,6 +8,7 @@ import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
 
 import com.example.dietchartmanagement.Beans.doctor;
+import com.example.dietchartmanagement.Services.userservice;
 import com.example.dietchartmanagement.Services.DoctorService.doctorservice;
 
 @Controller
@@ -15,6 +16,8 @@ public class doctorcontroller {
 
     @Autowired
     doctorservice ds;
+    @Autowired
+    userservice us;
 
     @PostMapping("/doctorsave")
     public String savedoctor(@ModelAttribute("doctor") doctor doctor) {
@@ -47,9 +50,16 @@ public class doctorcontroller {
         return "doctorhome";
     }
     @GetMapping("/expertise")
-    public String expertise() {
-
+    public String viewdoctorHomePage(Model model) {
+        model.addAttribute("alldoctorlist", ds.getAllEmployee());
         return "doctorexpertise";
     }
     
+    @GetMapping("/patient")
+    public String patientlist(Model model) {
+        model.addAttribute("allpatientlist", us.getAllEmployee());
+        return "patientlist";
+    }
+    
+
 }

@@ -50,8 +50,11 @@ cursor: pointer;
 .doctorcard{
 background-color: #fff;
 border-radius: 8px;
-box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Adjust shadow as needed */
+box-shadow: 0 4px 8px rgb(0 0 0 / 41%); /* Adjust shadow as needed */
 padding: 20px;
 width:fit-content; /* Adjust width as needed */
+margin-left: 5%;
+margin-top: 3%;
+padding-right: 175px;
 
 }
