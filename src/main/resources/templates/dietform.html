@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Diet Form</title>
+<link rel="stylesheet" href="Css/register.css">
+</head>
+<body>
+
+    <div class="container flex">
+        
+          <form id="registrationForm" action="#" th:action="@{/dietsave}" th:object="${diet}" method="POST">
+              <header>Generate Diet</header>
+              <input type="text" th:field="*{mealtime}" placeholder="Time" class="form-control mb-4 col-4"> 
+              <input type="text" th:field="*{type}" placeholder=" Type of Meal" class="form-control mb-4 col-4">
+              <input type="text" th:field="*{meal}" placeholder="Meal" class="form-control mb-4 col-4">
+      
+              
+            <div class="link">
+                <button type="submit" class="register">Add</button>
+            </div>
+            
+          </form>
+        </div>
+      </div>
+
+</body>
+</html>

@@ -1,45 +1,135 @@
 .patientcard {
-    background-color: #fff;
-    border-radius: 8px;
-    box-shadow: 0 4px 8px rgb(0 0 0 / 41%);
-    /* Adjust shadow as needed */
-    padding: 20px;
-    width: 60%;
-    /* Adjust width as needed */
-    margin-left: 5%;
-    margin-top: 3%;
-    padding-right: 175px;
+  background-color: #fff;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgb(0 0 0 / 41%);
+  /* Adjust shadow as needed */
+  padding: 20px;
+  width: 60%;
+  /* Adjust width as needed */
+  margin-left: 5%;
+  margin-top: 3%;
+  padding-right: 175px;
 
-    display: flex;
-    align-items: center;
+  display: flex;
+  align-items: center;
+  margin-bottom: 31px;
 }
-.patientcard-content{
-    display: flex;
-  flex-grow: 1; /* Allow the content div to grow */
-  justify-content: space-between; /* Distribute content evenly */
-  
+
+.patientcard-content {
+  display: flex;
+  flex-grow: 1;
+  /* Allow the content div to grow */
+  justify-content: space-between;
+  /* Distribute content evenly */
+
 }
+
 .patientcard img {
-    max-width: 60px; /* Adjust image size as needed */
-    margin-right: 15px;
-  }
-.mainpatient{
+  max-width: 60px;
+  /* Adjust image size as needed */
+  margin-right: 15px;
+}
+
+.mainpatient {
   display: flex;
 }
+
 .left-section {
-  flex: 2; /* Make left section flexible */
-  padding: 20px; /* Optional: Add padding for spacing */
+  flex: 3;
+  /* Make left section flexible */
+  padding: 20px;
+  /* Optional: Add padding for spacing */
+  border-style: solid;
+  border-color: #3498dbcf;
+  border-radius: 10px;
+  box-shadow: brown;
+  border-block-width: 10px;
+  margin-top: 20px;
+  margin-left: 20px;
 }
 
 .right-section {
-  flex: 1; /* Make right section flexible */
-  padding: 20px; /* Optional: Add padding for spacing */
+  flex: 1;
+  /* Make right section flexible */
+  padding: 20px;
+  /* Optional: Add padding for spacing */
 }
-.content button{
+
+.content button {
 
   margin-left: 10px;
 
 }
-.content h2{
+
+.content h2 {
   margin-left: 10px;
+  margin-bottom: 10px;
+}
+
+.left-section h1 {
+  margin-left: 37px;
+  margin-top: 10px;
+  font-size: 22px;
+  font-family: monospace;
+}
+
+.image-description-section {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  padding: 38px 0;
+  
+}
+.overheading h1{
+  color: black;
+  font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+  font-size: 50px;
+  font-weight: 600;
+  /* text-align: center; */
+  margin-top: 20px;
+  margin-bottom: 20px;
+  margin-left: 10px;
+
+
+}
+
+.image-container img {
+  /* max-width: 100%; */
+  width: 700px;
+  height: 400px;
+  margin: 0px 15px;
+}
+
+.description-container {
+  flex: 2;
+  padding: 0 10px;
+
+  
+}
+
+.description-container h1 {
+  font-size: 22px;
+  font-family: monospace;
+  margin-bottom: 20px;
+  margin-left: -417px;
+}
+
+.description-container p {
+  font-size: 16px;
+  line-height: 1.6;
+  margin-bottom: 20px;
+}
+
+.description-container a {
+  display: inline-block;
+  padding: 10px 20px;
+  background-color: #3498db;
+  color: #fff;
+  text-decoration: none;
+  border-radius: 4px;
+  transition: background-color 0.3s ease;
+}
+
+.description-container a:hover {
+  background-color: #2980b9;
 }

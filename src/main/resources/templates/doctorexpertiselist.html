@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="https://thymeleaf.org">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SmartDietary</title>
+  <link rel="stylesheet" href="Css/doctorexpertiselist.css">
+  
+</head>
+<body>
+    <header>
+       <!-- navbar starts -->
+    <section th:include="fragments/navbar">
+        
+    </section>
+    <!-- navbar ends -->
+    </header>
+    <section class="requeststatusbox">
+
+      <h2>Request Status</h2>
+
+      </div>
+      <div class="request-card" th:each="request:${request}">
+        <div class="request-info">
+            <p th:text="'Request ID : SMRTDIK5'+${request.requestid}"></p>
+            <p th:text="'Date : 03-04-2024'"></p>
+        </div>
+        <div class="request-status" th:text="'Pending'"></div>
+    </div>
+      
+
+    <h2>Diet Specialists</h2>
+    </section>
+  
+  <section class="doctorcard" th:each="doctor:${alldoctorlist}" >
+    <div class="section" >
+      <img src="https://tse1.mm.bing.net/th/id/OIP.hIuJO0PIE2kRkLgyTLis5AHaFj?w=275&h=206&c=7&r=0&o=5&dpr=1.1&pid=1.7" alt="Dr. Abhishek Shitole">
+    <div class="details">
+      <h2 th:text="${doctor.name}"></h2>
+      <p th:text="${doctor.qualification}">M.B.B.S, MS(General Surgery), McH(Plastic & Reconstructive Surgery)</p>
+      <p th:text="${doctor.specialization}">Department: Plastic Surgery</p>
+      <p>Expertise: <span th:text="${doctor.specialization}"></span> for thier services with <span th:text="${doctor.experience}"></span> experience</p>
+      <p>Content of Expertise: [Insert content here]</p>
+    </div>
+
+    </div>
+    
+    <div class="section">
+      <a class="ac" href="healthform"><button class="appointment-button" id="open-button" onclick="generateAndSetRequestNo()">Request For Generate</button></a>
+      <button class="view-profile-button">View Profile</button>
+
+    </div>
+  </section>
+  <section th:insert="fragments/footer"> 
+
+  </section>
+  
+</body>
+</html>

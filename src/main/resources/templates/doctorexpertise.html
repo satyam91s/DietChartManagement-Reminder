@@ -1,39 +1,168 @@
 <!DOCTYPE html>
 <html lang="en" xmlns:th="https://thymeleaf.org">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>SmartDietary</title>
   <link rel="stylesheet" href="Css/doctorexpertise.css">
-  
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
+    integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+
 </head>
+
 <body>
-    <header>
-        <section th:insert="navbar">
-        
-        </section>
-    </header>
-  
-  <section class="doctorcard" th:each="doctor:${alldoctorlist}" >
-    <div class="section" >
-      <img src="https://tse1.mm.bing.net/th/id/OIP.hIuJO0PIE2kRkLgyTLis5AHaFj?w=275&h=206&c=7&r=0&o=5&dpr=1.1&pid=1.7" alt="Dr. Abhishek Shitole">
-    <div class="details">
-      <h2 th:text="${doctor.name}"></h2>
-      <p th:text="${doctor.qualification}">M.B.B.S, MS(General Surgery), McH(Plastic & Reconstructive Surgery)</p>
-      <p th:text="${doctor.specialization}">Department: Plastic Surgery</p>
-      <p>Expertise: <span th:text="${doctor.specialization}"></span> for thier services with <span th:text="${doctor.experience}"></span> experience</p>
-      <p>Content of Expertise: [Insert content here]</p>
-    </div>
+  <header>
+    <!-- navbar starts -->
+    <section th:include="fragments/navbar">
+
+    </section>
+    <!-- navbar ends -->
+  </header>
+
+  <section class="doctorcard" th:each="doctor:${alldoctorlist}">
+    <div class="section">
+      <img src="https://tse1.mm.bing.net/th/id/OIP.hIuJO0PIE2kRkLgyTLis5AHaFj?w=275&h=206&c=7&r=0&o=5&dpr=1.1&pid=1.7"
+        alt="Dr. Abhishek Shitole">
+      <div class="details">
+        <h2 th:text="${doctor.name}"></h2>
+        <p th:text="${doctor.qualification}">M.B.B.S, MS(General Surgery), McH(Plastic & Reconstructive Surgery)</p>
+        <p th:text="${doctor.specialization}">Department: Plastic Surgery</p>
+        <p>Expertise: <span th:text="${doctor.specialization}"></span> for thier services with <span
+            th:text="${doctor.experience}"></span> experience</p>
+        <p>Content of Expertise: [Insert content here]</p>
+      </div>
 
     </div>
-    
+
     <div class="section">
-      <button class="appointment-button">Request an Appointment</button>
+      <button class="appointment-button" data-toggle="modal" data-target="#addModal">Request an Appointment</button>
       <button class="view-profile-button">View Profile</button>
 
     </div>
   </section>
+  <!-- Add New Modal -->
+<div class="modal fade" id="addModal" tabindex="-1" role="dialog" aria-labelledby="addModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="addModalLabel">Fill Appointment Form</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <!-- Add your form for adding new records here -->
+        <form th:action="@{/appointreq}" th:object="${appointment}" method="POST" id="appointmentForm">
+          <div class="form-group">
+            <!-- Hidden input field for appointment number -->
+            <label for="appointmentNumber">Appointment No.</label>
+            <input type="text" class="form-control" id="appointmentNumber" name="appointmentNumber" th:value="${appointmentNumber}" />
+          </div>
+          <div class="form-group">
+            <!-- Hidden input field for doctor ID -->
+            <label for="doctorId">Doctor Id</label>
+            <input type="text" class="form-control" id="doctorId" name="doctorId" th:value="${doctorId}" />
+          </div>
+          <div class="form-group">
+            <label for="name">Name</label>
+            <input type="text" class="form-control" id="name" name="name" placeholder="Enter Your Name">
+          </div>
+          <div class="form-group">
+            <label for="email">Email</label>
+            <input type="email" class="form-control" id="email" name="email" placeholder="Enter Your Email">
+          </div>
+          <div style="display: grid; grid-template-columns: 1fr 1fr;">
+            <div class="form-group">
+              <label for="contact">Contact</label>
+              <input type="text" class="form-control" id="contact" name="contact" placeholder="Enter Your Contact">
+            </div>
+            <div class="form-group">
+              <label for="slot">Select Slot</label>
+              <select class="form-control" id="slot" name="slot">
+                <option value="slot1">Slot 1</option>
+                <option value="slot2">Slot 2</option>
+                <option value="slot3">Slot 3</option>
+                <!-- Add more slot options as needed -->
+              </select>
+            </div> 
+
+          </div>
+         
+          <div class="form-group">
+            <label for="message">Message</label>
+            <textarea class="form-control" id="message" name="message" rows="3" placeholder="Enter Your Message"></textarea>
+          </div>
+         
+          <button type="submit" class="btn btn-primary">Submit</button>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- Success Modal -->
+<div class="modal fade" id="successModal" tabindex="-1" role="dialog" aria-labelledby="successModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="successModalLabel">Appointment Request Sent Successfully</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        Your appointment request has been successfully submitted.
+      </div>
+    </div>
+  </div>
+</div>
+
+<script>
+  // Function to handle form submission
+  function submitForm() {
+    // Here, you would have your form submission logic
+    // After successful submission, hide the form modal and show the success modal
+    $('#addModal').modal('hide');
+    $('#successModal').modal('show');
+  }
+
+  // Add event listener to the appointment form submission
+  document.getElementById('appointmentForm').addEventListener('submit', function(event) {
+    // Prevent the default form submission behavior
+    event.preventDefault();
+    // Call the function to handle form submission
+    submitForm();
+  });
+</script>
+  <section th:insert="fragments/footer">
     
 
+  </section>
+  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+    integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+    crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"
+    integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49"
+    crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"
+    integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy"
+    crossorigin="anonymous"></script>
+    <script>
+      // JavaScript code to generate appointment number
+      document.addEventListener("DOMContentLoaded", function() {
+          // Generate appointment number (example: using UUID)
+          var appointmentNumber = generateAppointmentNumber();
+          
+          // Set the appointment number value to the hidden input field
+          document.getElementById("appointmentNumber").value = appointmentNumber;
+      });
+  
+      // Function to generate appointment number (example using UUID)
+      function generateAppointmentNumber() {
+          return 'APT' + Math.floor(100000 + Math.random() * 900000); // Example format: APT123456
+      }
+  </script>
+
 </body>
+
 </html>

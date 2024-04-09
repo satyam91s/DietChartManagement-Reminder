@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="https://thymeleaf.org">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SmartDietary</title>
+    <link rel="stylesheet" href="Css/doctorexpertiselist.css">
+</head>
+
+<body>
+    <section id="appointment-body">
+        <div id="popup-form">
+            <h2 id="appointment-heading">Appointment Form</h2>
+            <form id="appointment-form" th:action="@{/healthformsave}" th:object="${healthform}" method="POST"
+                onsubmit="return submitForm();">
+                <label for="request-no" class="appointment-label">Request No.:</label>
+                <input type="text" th:field="*{requestNumber}" id="request-no" readonly class="appointment-input"><br>
+                <label for="name" class="appointment-label">Name:</label>
+                <input type="text" th:field="*{name}" id="name" required class="appointment-input"><br>
+                <label for="email" class="appointment-label">Email:</label>
+                <input type="email" th:field="*{email}" id="email" required class="appointment-input"><br>
+                <label for="mobile-number" class="appointment-label">Mobile Number:</label>
+                <input type="tel" th:field="*{mobileNumber}" id="mobile-number" required class="appointment-input"><br>
+
+                <!-- Fields in horizontal line -->
+                <div class="horizontal-fields">
+                    <label for="height" class="appointment-label">Height (cm):</label>
+                    <input type="number" th:field="*{height}" id="height" required class="appointment-input">
+
+                    <label for="weight" class="appointment-label">Weight (kg):</label>
+                    <input type="number" th:field="*{weight}" id="weight" required class="appointment-input">
+                </div>
+
+                <label for="age" class="appointment-label">Age:</label>
+                <input type="number" th:field="*{age}" id="age" required class="appointment-input"><br>
+                <label for="goal" class="appointment-label">Goal:</label>
+                <select id="goal" th:field="*{goal}" required class="appointment-select">
+                    <option value="">Select Goal</option>
+                    <option value="weight-loss">Weight Loss</option>
+                    <option value="muscle-gain">Muscle Gain</option>
+                    <option value="improved-fitness">Improved Fitness</option>
+                    <option value="other">Other</option>
+                </select><br>
+                <label for="health-conditions" class="appointment-label">Health Conditions:</label>
+                <select id="health-conditions" th:field="*{healthConditions}" class="appointment-select">
+                    <option value="">None</option>
+                    <option value="diabetes">Diabetes</option>
+                    <option value="heart-disease">Heart Disease</option>
+                    <option value="allergies">Allergies</option>
+                    <option value="other">Other</option>
+                </select><br>
+
+                <!-- Fields in horizontal line -->
+                <div class="horizontal-fields">
+                    <label for="wakeup-time" class="appointment-label">Wake Up Time:</label>
+                    <input type="time" th:field="*{wakeupTime}" id="wakeup-time" class="appointment-input">
+
+                    <label for="sleep-time" class="appointment-label">Sleep Time:</label>
+                    <input type="time" th:field="*{sleepingTime}" id="sleep-time" class="appointment-input">
+                </div>
+
+                <!-- Fields in horizontal line -->
+                <div class="horizontal-fields">
+                    <label for="job-time-from" class="appointment-label">Job Time (From):</label>
+                    <input type="time" th:field="*{jobTime_from}" id="job-time-from" class="appointment-input">
+
+                    <label for="job-time-to" class="appointment-label">Job Time (To):</label>
+                    <input type="time" th:field="*{jobTime_to}" id="job-time-to" class="appointment-input">
+                </div>
+
+                <button type="submit" id="appointment-submit">Submit</button>
+            </form>
+        </div>
+    </section>
+
+    <script>
+        // Function to generate a random alphanumeric string for request number
+        function generateRequestNo(length) {
+            var chars = '0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZ';
+            var result = 'SMRTDI';
+            for (var i = length - 6; i > 0; --i) {
+                result += chars[Math.floor(Math.random() * chars.length)];
+            }
+            return result;
+        }
+
+        // Function to show popup message on form submission
+        function submitForm() {
+            var requestNoInput = document.getElementById("request-no");
+            alert('Your request has been submitted successfully!\nRequest No.: ' + requestNoInput.value);
+            return true; // returning true to allow form submission
+        }
+
+        document.addEventListener("DOMContentLoaded", function () {
+            var requestNoInput = document.getElementById("request-no");
+            // Generate and set request number when the page loads
+            requestNoInput.value = generateRequestNo(10); // Adjust the length as needed
+        });
+    </script>
+</body>
+
+</html>

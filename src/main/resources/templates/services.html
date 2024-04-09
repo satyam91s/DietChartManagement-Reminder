@@ -19,9 +19,11 @@
   </head>
   <body>
    
-      <section th:insert="navbar">
+      <!-- navbar starts -->
+    <section th:include="fragments/navbar">
         
-      </section>
+    </section>
+    <!-- navbar ends -->
       <section class="show">
         <div id="showcase">
           <div class="container">
@@ -46,7 +48,7 @@
             <div class="icon-wrapper">
               <i class="fas fa-hammer"></i>
             </div>
-            <a href="aidiet"><h3 class="font">AI Diet Generate</h3></a>
+            <a href="dietdetailform"><h3 class="font">Generate Diet</h3></a>
             <p>
               Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quisquam
               consequatur necessitatibus eaque.
@@ -118,6 +120,9 @@
           </div>
         </div>
       </div>
+    </section>
+    <section th:insert="fragments/footer"> 
+
     </section>
   </body>
 </html>

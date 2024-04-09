@@ -90,21 +90,6 @@ public class mycontroller {
         return "contact";
     }
 
-    // Doctor detail controller end
-
-    // Health detail controller start
-    @PostMapping("/healthsave")
-    public String healthsave(@ModelAttribute("healthdetail") healthdetail healthdetail) {
-        hr.save(healthdetail);
-        return "redirect:/";
-    }
-
-    @GetMapping("/healthform")
-    public String healthform(Model model) {
-        model.addAttribute("healthdetail", new healthdetail());
-        return "healthdetail";
-    }
-    // Health detail controller end
 
     //test
     @GetMapping("/test")

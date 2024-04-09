@@ -2,6 +2,7 @@ package com.example.dietchartmanagement.Services;
 
 import java.util.List;
 
+import com.example.dietchartmanagement.Beans.diet;
 import com.example.dietchartmanagement.Beans.user;
 
 public interface userserviceimp {

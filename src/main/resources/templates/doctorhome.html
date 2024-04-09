@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" xmlns:th="https://thymeleaf.org">
 
 <head>
   <meta charset="UTF-8">
@@ -13,68 +13,11 @@
 
 <body>
   <header>
-    <!-- navbar starts -->
-    <section>
-      <nav class="nav1">
-        <div class="logo">
-          <img src="https://tse4.mm.bing.net/th/id/OIP.6zYllqW5w1cVPRjzmbxAIQHaHa?w=221&h=220&c=7&r=0&o=5&dpr=1.1&pid=1.7" alt="Logo">
-          <h1>SmartDietary</h1>
-        </div>
-
-
-
-        <div class="search">
-          <input type="text" placeholder="Search...">
-          <button>Search</button>
-        </div>
-
-
-
-        <div class="dark-light">
-          <button onclick="toggleMode()">Dark Mode</button>
-        </div>
-
-        <div class="profile">
-          <a href="profile"> <img src="profile.png" alt="Profile"></a>
-        </div>
-      </nav>
-      <nav class="nav2">
-        <ul>
-          <li><a href="/homedoctor">Home</a></li>
-
-          <li class="dropdown">
-            <a href="#">Services</a>
-            
-          </li>
-
-          <li class="dropdown">
-            <a href="patient">Patients</a>
-          </li>
-
-          <li class="dropdown">
-            <a href="blog">Health Blog</a>
-            
-          </li>
-          <!-- <li class="dropdown">
-            <a href="doctorlogin">Doctors Panel</a>
-            
-          </li> -->
-
-
-          <li><a href="about">About</a></li>
-          <li><a href="contact">Contact Us</a></li>
-        </ul>
-        <div class="buttons">
-          <a href="login"><button>Sign In</button></a>
-          <a href="register"><button>Sign Up</button></a>
-        </div>
-      </nav>
-
-      <script src="Js/navbar.js"></script>
-
+    <section th:insert="fragments/doctornavbar">
+    
     </section>
-    <!-- navbar ends -->
-  </header>
+</header>
+  
   <main>
     <!-- slider starts -->
    <section class="mainslider">
@@ -347,19 +290,9 @@
     </section>
     <!-- testimonials ends -->
     <!-- footer starts -->
-    <footer>
-      <div class="footer-info">
-          <p>Contact us: +1-123-456-7890</p>
-          <p>Email for help: <a href="mailto:help@example.com">help@example.com</a></p>
-      </div>
-      <div class="footer-links">
-          <a href="#">Diet Generate</a>
-          <a href="#">Reminder System</a>
-          <a href="#">Health Specialists</a>
-          <a href="#">Healthy Blog</a>
-      </div>
-      <p>&copy; 2024 Diet Chart Management and Reminder System. All rights reserved.</p>
-  </footer>
+    <section th:insert="fragments/footer"> 
+
+    </section>
     <!-- footer ends -->
   </main>
 </body>

@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User Profile</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f2f2f2;
+            padding: 20px;
+        }
+        .profile-container {
+            max-width: 100%;
+            margin: 0 auto;
+            background-color: #fff;
+            border-radius: 10px;
+            padding: 20px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+        }
+        .profile-info {
+            margin-bottom: 20px;
+        }
+        .profile-info label {
+            font-weight: bold;
+        }
+        .profile-info p {
+            margin: 5px 0;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <section th:insert="fragments/navbar">
+        
+        </section>
+    </header>
+    <div class="profile-container" th:each="allpatientdetail:${allpatientdetail}">
+        <h2>User Profile</h2>
+        <div class="profile-info" >
+            <label>ID:</label>
+            <p th:text="${allpatientdetail.id}"></p>
+        </div>
+        <div class="profile-info">
+            <label>Request Number:</label>
+            <p th:text="${allpatientdetail.requestNumber}"></p>
+        </div>
+        <div class="profile-info">
+            <label>Name:</label>
+            <p th:text="${allpatientdetail.name}"></p>
+        </div>
+        <div class="profile-info">
+            <label>Email:</label>
+            <p th:text="${allpatientdetail.email}"></p>
+        </div>
+        <div class="profile-info">
+            <label>Mobile Number:</label>
+            <p th:text="${allpatientdetail.mobileNumber}"></p>
+        </div>
+        <div class="profile-info">
+            <label>Height:</label>
+            <p th:text="${allpatientdetail.height}"></p>
+        </div>
+        <div class="profile-info">
+            <label>Weight:</label>
+            <p th:text="${allpatientdetail.weight}"></p>
+        </div>
+        <div class="profile-info">
+            <label>Age:</label>
+            <p th:text="${allpatientdetail.age}"></p>
+        </div>
+        <div class="profile-info">
+            <label>Goal:</label>
+            <p th:text="${allpatientdetail.goal}"></p>
+        </div>
+        <div class="profile-info">
+            <label>Health Conditions:</label>
+            <p th:text="${allpatientdetail.healthConditions}"></p>
+        </div>
+        <div class="profile-info">
+            <label>Wakeup Time:</label>
+            <p th:text="${allpatientdetail.wakeupTime}"></p>
+        </div>
+        <div class="profile-info">
+            <label>Sleeping Time:</label>
+            <p th:text="${allpatientdetail.sleepingTime}"></p>
+        </div>
+        <div class="profile-info">
+            <label>Job Time From:</label>
+            <p th:text="${allpatientdetail.jobTime_from}"></p>
+        </div>
+        <div class="profile-info">
+            <label>Job Time To:</label>
+            <p th:text="${allpatientdetail.jobTime_to}"></p>
+        </div>
+    </div>
+    <a href="dietdata">
+        <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#addModal" style="width: 100%;">
+            Generate Diet
+        </button>
+    </a>
+    
+</body>
+</html>
