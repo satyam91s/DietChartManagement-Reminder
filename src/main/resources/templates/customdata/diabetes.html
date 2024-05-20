@@ -44,9 +44,9 @@
         </section>
     </header>
     <main>
-        <section th:fragments="dietdatad">
+        <section>
             <div class="container my-2" align="center" style="margin-top: 30px;">
-                <h3 style="background-color: antiquewhite; font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif; color: brown;">Diet Generation and Modification Panel</h3>
+                <h3 style="background-color: antiquewhite; font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif; color: brown;">Generated Diet Plan</h3>
                 
                 <table style="width:100%; margin-top: 20px;" border="1" class="table table-striped table-responsive-md" align="center">
                     <thead style="text-align: center;">
@@ -54,29 +54,32 @@
                             <th>Time</th>
                             <th>Type</th>
                             <th>Meal</th>
-                            <th>Modification</th>
+                            <!-- <th>Modification</th> -->
                             <th>Status</th>
                         </tr>
                     </thead>
                     <tbody style="text-align: center;">
-                        <tr th:each="dietdata: ${alldietdata}" >
-                            <td th:text="${dietdata.mealtime}"></td>
+                        <tr th:each="dietdata: ${diabetesdiet}" >
+                            <td th:text="${dietdata.time}"></td>
                             <td th:text="${dietdata.type}"></td>
                             <td th:text="${dietdata.meal}"></td>
-                            <td>
+                            <!-- <td>
                                 <a th:href="@{/showFormForUpdate/{id}(id=${dietdata.id})}" class="btn btn-primary">Modify</a>
                                 <a th:href="@{/deletebyId/{id}(id=${dietdata.id})}" class="btn btn-danger">Delete</a>
-                            </td>
+                            </td> -->
                             <td style="color: green; font-weight: bolder; font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif; font-size: larger;"><input type="checkbox"  onchange="handleCheckboxState(this)" ></td>
                         </tr>
                     </tbody>
                 </table>
                 <div style="display: grid; grid-template-columns: 12fr 1fr ;">
-                    <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#addModal" style="width: 100%;">
+                    <!-- <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#addModal" style="width: 100%;">
                         Add New
+                    </button> -->
+                    <button type="button" class="btn btn-primary" style="width: 100%; background-color: #377eae; font-weight: bolder;" onclick="handleSendButtonClick()">
+                        Send for Review
                     </button>
-                    <button type="button" class="btn btn-primary" style="width: 100%; background-color: #d42121f7;" onclick="handleSendButtonClick()">
-                        Send
+                    <button type="button" class="btn btn-primary" style="width: 100%; background-color: #26773bdb; font-weight: bolder;" onclick="handleSendButtonClick()">
+                        verified
                     </button>
 
                 </div>
@@ -105,21 +108,7 @@
                 </div>
                 <div class="modal-body">
                     <!-- Add your form for adding new records here -->
-                    <form th:action="@{/dietsave}" th:object="${diet}" method="POST">
-                        <div class="form-group">
-                            <label for="mealtime">Time</label>
-                            <input type="text" class="form-control" id="mealtime" name="mealtime" placeholder="Enter time">
-                        </div>
-                        <div class="form-group">
-                            <label for="type">Type</label>
-                            <input type="text" class="form-control" id="type" name="type" placeholder="Enter type">
-                        </div>
-                        <div class="form-group">
-                            <label for="meal">Meal</label>
-                            <input type="text" class="form-control" id="meal" name="meal" placeholder="Enter meal">
-                        </div>
-                        <button type="submit" class="btn btn-primary">Submit</button>
-                    </form>
+                   
                 </div>
             </div>
         </div>

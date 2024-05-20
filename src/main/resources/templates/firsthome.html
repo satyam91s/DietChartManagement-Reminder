@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" xmlns:th="https://thymeleaf.org">
 
 <head>
   <meta charset="UTF-8">
@@ -34,7 +34,7 @@
         </div>
 
         <div class="profile">
-          <a href="profile"> <img src="Image/profile.png" alt="Profile"></a>
+          <a href="login"> <img src="profile.png" alt="Profile"></a>
         </div>
       </nav>
       <nav class="nav2">
@@ -42,12 +42,12 @@
           <li><a href="home">Home</a></li>
 
           <li class="dropdown">
-            <a href="service">Services</a>
+            <a href="login">Services</a>
             
           </li>
 
           <li class="dropdown">
-            <a href="expertise">Diet Expertise</a>
+            <a href="login">Diet Expertise</a>
           </li>
 
           <li class="dropdown">
@@ -63,10 +63,10 @@
           <li><a href="about">About</a></li>
           <li><a href="contact">Contact Us</a></li>
         </ul>
-        <!-- <div class="buttons">
+        <div class="buttons">
           <a href="userlogin"><button>Sign In</button></a>
           <a href="register"><button>Sign Up</button></a>
-        </div> -->
+        </div>
       </nav>
 
       <script src="Js/navbar.js"></script>
@@ -170,21 +170,21 @@
               <h2>Reminder System</h2>
               <img src="https://vectorified.com/images/reminder-icon-png-4.png" alt="">
               <p class="content">Set reminders for your meals, workouts, or any other important tasks.</p>
-              <a href="#reminder">Set Reminder</a>
+              <a href="reminder">Set Reminder</a>
           </div>
   
           <div class="card">
               <h2>Consultants</h2>
               <img src="https://th.bing.com/th/id/R.81269e874243743d46cdefea1863db82?rik=1bWzxvj1HSZToA&riu=http%3a%2f%2fwww.clipartbest.com%2fcliparts%2f9Tz%2fLEr%2f9TzLErg8c.png&ehk=%2fBiJwzGMHdqTWSP2YgTBSlkvI7taCv7EawW%2b4G8q0zc%3d&risl=&pid=ImgRaw&r=0" alt="">
               <p class="content">Connect with our expert consultants for personalized advice and guidance.</p>
-              <a href="#">Find Consultant</a>
+              <a href="doctorexpertise">Find Consultant</a>
           </div>
   
           <div class="card">
               <h2>Blog</h2>
               <img src="https://tse1.mm.bing.net/th/id/OIP.ilWCuT7JTXj_Lw_Z0UJZfwHaHa?w=221&h=220&c=7&r=0&o=5&dpr=1.1&pid=1.7" alt="">
               <p class="content">Read informative articles, tips, and guides on health, nutrition, and fitness.</p>
-              <a href="#blog">Read Blog</a>
+              <a href="blog">Read Blog</a>
           </div>
       </div>
   
@@ -252,14 +252,14 @@
       <div class="description-container">
           <h2>Diet Management and Planning</h2>
           <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla nec lectus eu urna viverra congue. Vestibulum vitae leo sed nisi lacinia lobortis vel a nunc. Morbi rhoncus, ipsum nec convallis ultrices, felis leo ultricies justo, sit amet interdum nisi justo non libero.</p>
-          <a href="#">Explore</a>
+          <a href="login">Explore</a>
       </div>
   </section>
   <section class="image-description-section">
     <div class="description-container">
       <h2>Track Your Plan With Reminder System</h2>
       <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla nec lectus eu urna viverra congue. Vestibulum vitae leo sed nisi lacinia lobortis vel a nunc. Morbi rhoncus, ipsum nec convallis ultrices, felis leo ultricies justo, sit amet interdum nisi justo non libero.</p>
-      <a href="#">Explore</a>
+      <a href="login">Explore</a>
   </div>
     <div class="image-container">
         <img src="Image/f1.jpg" alt="Image Description">
@@ -273,14 +273,14 @@
   <div class="description-container">
       <h2>Connect with Diet Specialist in Your Location</h2>
       <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla nec lectus eu urna viverra congue. Vestibulum vitae leo sed nisi lacinia lobortis vel a nunc. Morbi rhoncus, ipsum nec convallis ultrices, felis leo ultricies justo, sit amet interdum nisi justo non libero.</p>
-      <a href="#">Explore</a>
+      <a href="login">Explore</a>
   </div>
 </section>
 <section class="image-description-section" >
   <div class="description-container" >
     <h2>Connect with Fitness World</h2>
     <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla nec lectus eu urna viverra congue. Vestibulum vitae leo sed nisi lacinia lobortis vel a nunc. Morbi rhoncus, ipsum nec convallis ultrices, felis leo ultricies justo, sit amet interdum nisi justo non libero.</p>
-    <a href="#">Explore</a>
+    <a href="blog">Explore</a>
 </div>
   <div class="image-container">
       <img src="Image/f3.jpg" alt="Image Description">
@@ -341,7 +341,7 @@
     </section>
     <!-- Blog overviews ends -->
     <!-- testimonials starts -->
-    <section>
+    <section >
 
     </section>
     <!-- testimonials ends -->

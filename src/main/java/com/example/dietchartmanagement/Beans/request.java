@@ -11,14 +11,13 @@ import jakarta.persistence.Table;
 public class request {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY) // Use GenerationType.IDENTITY for auto-incremented primary keys
+    @GeneratedValue(strategy = GenerationType.IDENTITY) 
 
-    private Long requestid; // Change the data type to Long for auto-generated IDs
+    private Long requestid; 
     private String Date_Time;
     private String status;
 
-    // Constructors, getters, and setters
-    // Constructor with parameters
+   
     public request(String date_Time, String status) {
         Date_Time = date_Time;
         this.status = status;

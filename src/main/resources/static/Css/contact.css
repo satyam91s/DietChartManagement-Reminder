@@ -7,12 +7,8 @@
   font-family: 'Poppins', sans-serif;
 }
 body{
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  min-height: 100vh;
-  padding: 40px;
-  background: #3498db;
+  
+  background: #95b1c4;
 }
 .container{
   max-width: 800px;
@@ -20,6 +16,8 @@ body{
   width: 800px;
   padding: 25px 40px 10px 40px;
   box-shadow: 0px 0px 10px rgba(0,0,0,0.1);
+  margin-top: 110px;
+    margin-left: 308px;
 }
 .container .text{
   text-align: center;

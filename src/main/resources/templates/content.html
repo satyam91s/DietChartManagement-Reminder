@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Wellness Wisdom - Diet and Health Blog</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+            color: #333;
+        }
+
+        .container {
+            width: 80%;
+            margin: 0 auto;
+        }
+
+        section {
+            padding: 20px 0;
+        }
+
+        section h2 {
+            color: #4CAF50;
+        }
+
+        .card-container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+        }
+
+        .card {
+            background: #fff;
+            padding: 20px;
+            border-radius: 5px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            flex: 1 1 calc(33.333% - 20px);
+            box-sizing: border-box;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+
+        .card h3 {
+            margin-top: 0;
+        }
+
+        .card p {
+            flex-grow: 1;
+        }
+
+        .read-more {
+            display: inline-block;
+            margin-top: 10px;
+            color: #4CAF50;
+            text-decoration: none;
+        }
+
+        .read-more:hover {
+            text-decoration: underline;
+        }
+
+        form {
+            background: #fff;
+            padding: 20px;
+            border-radius: 5px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        form label {
+            display: block;
+            margin-bottom: 10px;
+        }
+
+        form input, form textarea {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+
+        form button {
+            background: #4CAF50;
+            color: #fff;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        form button:hover {
+            background: #45a049;
+        }
+        /* footer starts */
+  footer {
+    background-color: #333;
+    color: #fff;
+    padding: 40px 0;
+    text-align: center;
+  }
+  
+  .footer-info {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    margin-bottom: 20px;
+  }
+  
+  .footer-info p {
+    margin: 0;
+    margin-right: 20px;
+  }
+  
+  .footer-info a {
+    color: #fff;
+    text-decoration: none;
+    transition: color 0.3s;
+  }
+  
+  .footer-info a:hover {
+    color: #ddd;
+  }
+  
+  .footer-links {
+    margin-top: 20px;
+  }
+  
+  .footer-links a {
+    color: #fff;
+    text-decoration: none;
+    margin: 0 15px;
+    transition: color 0.3s;
+  }
+  
+  .footer-links a:hover {
+    color: #ddd;
+  }
+  /* footer ends */
+    </style>
+</head>
+<body>
+
+        
+    
+    <section id="home">
+        <div class="container">
+            <h2>Welcome to Wellness Wisdom</h2>
+            <p>Your go-to blog for diet, health, and wellness tips.</p>
+        </div>
+    </section>
+
+    <section id="about">
+        <div class="container">
+            <h2>About Us</h2>
+            <p>At Wellness Wisdom, we share insightful articles, tips, and recipes to help you lead a healthier and more balanced life. Our mission is to inspire and empower you to make informed decisions about your diet and overall wellness.</p>
+        </div>
+    </section>
+
+    <section id="blog">
+        <div class="container">
+            <h2>Blog</h2>
+            <div class="card-container">
+                <div class="card">
+                    <h3>The Importance of a Balanced Diet</h3>
+                    <p>A balanced diet is crucial for maintaining good health and well-being. It provides your body with the essential nutrients it needs to function correctly. In this article, we discuss the components of a balanced diet and offer tips on how to achieve it.</p>
+                    <a href="#" class="read-more">Read More</a>
+                </div>
+                <div class="card">
+                    <h3>10 Tips for Staying Hydrated</h3>
+                    <p>Staying hydrated is vital for your health, yet many people don't drink enough water. In this post, we share 10 practical tips to help you stay hydrated throughout the day.</p>
+                    <a href="#" class="read-more">Read More</a>
+                </div>
+                <div class="card">
+                    <h3>Benefits of Regular Exercise</h3>
+                    <p>Regular exercise has numerous benefits for your physical and mental health. Learn about the various advantages of incorporating physical activity into your daily routine.</p>
+                    <a href="#" class="read-more">Read More</a>
+                </div>
+                <div class="card">
+                    <h3>Healthy Eating on a Budget</h3>
+                    <p>Eating healthy doesn't have to be expensive. In this article, we share tips and tricks for maintaining a nutritious diet while sticking to a budget.</p>
+                    <a href="#" class="read-more">Read More</a>
+                </div>
+                <div class="card">
+                    <h3>Superfoods You Should Include in Your Diet</h3>
+                    <p>Superfoods are packed with nutrients and offer numerous health benefits. Discover which superfoods you should be adding to your meals.</p>
+                    <a href="#" class="read-more">Read More</a>
+                </div>
+                <div class="card">
+                    <h3>Mindfulness and Mental Health</h3>
+                    <p>Mindfulness can greatly improve your mental health. Learn how to practice mindfulness and incorporate it into your daily life.</p>
+                    <a href="#" class="read-more">Read More</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- footer starts -->
+    <!-- <footer>
+        <div class="footer-info">
+            <p>Contact us: +1-123-456-7890</p>
+            <p>Email for help: <a href="mailto:help@example.com">help@example.com</a></p>
+        </div>
+        <div class="footer-links">
+            <a href="#">Diet Generate</a>
+            <a href="#">Reminder System</a>
+            <a href="#">Health Specialists</a>
+            <a href="#">Healthy Blog</a>
+        </div>
+        <p>&copy; 2024 Diet Chart Management and Reminder System. All rights reserved.</p>
+    </footer> -->
+      <!-- footer ends -->
+</body>
+</html>

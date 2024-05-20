@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" xmlns:th="https://thymeleaf.org" >
+<html lang="en" xmlns:th="https://thymeleaf.org">
 
 <head>
     <meta charset="UTF-8">
@@ -7,114 +7,281 @@
     <title>SmartDietary</title>
     <link rel="stylesheet" href="Css/patientlist.css">
     <link rel="stylesheet" href="Css/navbar.css">
+    <!-- Swiper CSS -->
+    <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css">
 </head>
 
 <body>
 
     <header>
-        <section th:insert="fragments/doctornavbar">
-
-        </section>
+        <section th:insert="fragments/doctornavbar"></section>
     </header>
     <main>
         <section class="image-description-section">
-            
-            <div class="description-container">
+            <div class="description-container" style="display: grid; grid-template-columns: 0.7fr 0.7fr 0.7fr;">
                 <section>
-                    <div>
-                        <h1>
-                            Request For Generate
-                        </h1>
-                    </div>
-                    <div class="patientcard">
-                        <img src="https://th.bing.com/th/id/OIP.GHGGLYe7gDfZUzF_tElxiQHaHa?w=200&h=200&c=7&r=0&o=5&cb=10&dpr=1.1&pid=1.7" alt="img">
-                        <div class="content">
-                            <h2>Umang</h2>
-                            <button class="appointment-button">Accept</button>
-                            <button class="view-profile-button">Delete</button>
-    
+                    <div class="bordering">
+                        <div>
+                            <h1>Request For Generate</h1>
                         </div>
-    
+                        <div class="request-container" id="generate-request-container">
+                            <div class="patientcard" id="request-patient-P1">
+                                <img src="https://th.bing.com/th/id/OIP.GHGGLYe7gDfZUzF_tElxiQHaHa?w=200&h=200&c=7&r=0&o=5&cb=10&dpr=1.1&pid=1.7"
+                                    alt="img">
+                                <div class="content">
+                                    <h2>USER 1</h2>
+                                    <button class="appointment-button"
+                                        onclick="acceptRequest('P1', 'generate')">Accept</button>
+                                    <button class="view-profile-button" onclick="declineRequest('P1')">Decline</button>
+                                </div>
+                            </div>
+                            <div class="patientcard" id="request-patient-P1">
+                                <img src="https://th.bing.com/th/id/OIP.GHGGLYe7gDfZUzF_tElxiQHaHa?w=200&h=200&c=7&r=0&o=5&cb=10&dpr=1.1&pid=1.7"
+                                    alt="img">
+                                <div class="content">
+                                    <h2>USER 2</h2>
+                                    <button class="appointment-button"
+                                        onclick="acceptRequest('P1', 'generate')">Accept</button>
+                                    <button class="view-profile-button" onclick="declineRequest('P1')">Decline</button>
+                                </div>
+                            </div>
+                            <div class="patientcard" id="request-patient-P1">
+                                <img src="https://th.bing.com/th/id/OIP.GHGGLYe7gDfZUzF_tElxiQHaHa?w=200&h=200&c=7&r=0&o=5&cb=10&dpr=1.1&pid=1.7"
+                                    alt="img">
+                                <div class="content">
+                                    <h2>USER 3</h2>
+                                    <button class="appointment-button"
+                                        onclick="acceptRequest('P1', 'generate')">Accept</button>
+                                    <button class="view-profile-button" onclick="declineRequest('P1')">Decline</button>
+                                </div>
+                            </div>
+                            <div class="patientcard" id="request-patient-P1">
+                                <img src="https://th.bing.com/th/id/OIP.GHGGLYe7gDfZUzF_tElxiQHaHa?w=200&h=200&c=7&r=0&o=5&cb=10&dpr=1.1&pid=1.7"
+                                    alt="img">
+                                <div class="content">
+                                    <h2>USER 4</h2>
+                                    <button class="appointment-button"
+                                        onclick="acceptRequest('P1', 'generate')">Accept</button>
+                                    <button class="view-profile-button" onclick="declineRequest('P1')">Decline</button>
+                                </div>
+                            </div>
+                        </div>
                     </div>
-    
                 </section>
                 <section>
-                    <div>
-                        <h1>
-                            Appointment Request
-                        </h1>
-                    </div>
-                    <div class="patientcard">
-                        <img src="https://th.bing.com/th/id/OIP.GHGGLYe7gDfZUzF_tElxiQHaHa?w=200&h=200&c=7&r=0&o=5&cb=10&dpr=1.1&pid=1.7" alt="img">
-                        <div class="content">
-                            <h2>Suyash</h2>
-                            <button class="appointment-button">Confirm</button>
-                            <button class="view-profile-button">Delete</button>
-    
+                    <div class="bordering">
+                        <div>
+                            <h1>Appointment Request</h1>
                         </div>
-    
+                        <div class="request-container" id="appointment-request-container">
+                            <div class="patientcard" id="request-patient-P2">
+                                <img src="https://th.bing.com/th/id/OIP.GHGGLYe7gDfZUzF_tElxiQHaHa?w=200&h=200&c=7&r=0&o=5&cb=10&dpr=1.1&pid=1.7"
+                                    alt="img">
+                                <div class="content">
+                                    <h2>USER 1</h2>
+                                    <button class="appointment-button"
+                                        onclick="acceptRequest('P2', 'appointment')">Accept</button>
+                                    <button class="view-profile-button" onclick="declineRequest('P2')">Decline</button>
+                                </div>
+                            </div>
+                            <div class="patientcard" id="request-patient-P2">
+                                <img src="https://th.bing.com/th/id/OIP.GHGGLYe7gDfZUzF_tElxiQHaHa?w=200&h=200&c=7&r=0&o=5&cb=10&dpr=1.1&pid=1.7"
+                                    alt="img">
+                                <div class="content">
+                                    <h2>USER 2</h2>
+                                    <button class="appointment-button"
+                                        onclick="acceptRequest('P2', 'appointment')">Accept</button>
+                                    <button class="view-profile-button" onclick="declineRequest('P2')">Decline</button>
+                                </div>
+                            </div>
+                            <div class="patientcard" id="request-patient-P2">
+                                <img src="https://th.bing.com/th/id/OIP.GHGGLYe7gDfZUzF_tElxiQHaHa?w=200&h=200&c=7&r=0&o=5&cb=10&dpr=1.1&pid=1.7"
+                                    alt="img">
+                                <div class="content">
+                                    <h2>USER 3</h2>
+                                    <button class="appointment-button"
+                                        onclick="acceptRequest('P2', 'appointment')">Accept</button>
+                                    <button class="view-profile-button" onclick="declineRequest('P2')">Decline</button>
+                                </div>
+                            </div>
+                            <div class="patientcard" id="request-patient-P2">
+                                <img src="https://th.bing.com/th/id/OIP.GHGGLYe7gDfZUzF_tElxiQHaHa?w=200&h=200&c=7&r=0&o=5&cb=10&dpr=1.1&pid=1.7"
+                                    alt="img">
+                                <div class="content">
+                                    <h2>USER 4</h2>
+                                    <button class="appointment-button"
+                                        onclick="acceptRequest('P2', 'appointment')">Accept</button>
+                                    <button class="view-profile-button" onclick="declineRequest('P2')">Decline</button>
+                                </div>
+                            </div>
+                        </div>
                     </div>
-    
                 </section>
-            </div>
-            <div class="image-container">
-                <img src="Image/patientlistpage.png" alt="Image Description">
+                <section>
+                    <div class="bordering">
+                        <div>
+                            <h1>Diet Review Request</h1>
+                        </div>
+                        <div class="request-container" id="dietReview-request-container">
+                            <div class="patientcard" id="request-patient-P3">
+                                <img src="https://th.bing.com/th/id/OIP.GHGGLYe7gDfZUzF_tElxiQHaHa?w=200&h=200&c=7&r=0&o=5&cb=10&dpr=1.1&pid=1.7"
+                                    alt="img">
+                                <div class="content">
+                                    <h2>USER 1</h2>
+                                    <button class="appointment-button"
+                                        onclick="acceptRequest('P3', 'dietReview')">Accept</button>
+                                    <button class="view-profile-button" onclick="declineRequest('P3')">Decline</button>
+                                </div>
+                            </div>
+                            <div class="patientcard" id="request-patient-P3">
+                                <img src="https://th.bing.com/th/id/OIP.GHGGLYe7gDfZUzF_tElxiQHaHa?w=200&h=200&c=7&r=0&o=5&cb=10&dpr=1.1&pid=1.7"
+                                    alt="img">
+                                <div class="content">
+                                    <h2>USER 2</h2>
+                                    <button class="appointment-button"
+                                        onclick="acceptRequest('P3', 'dietReview')">Accept</button>
+                                    <button class="view-profile-button" onclick="declineRequest('P3')">Decline</button>
+                                </div>
+                            </div>
+                            <div class="patientcard" id="request-patient-P3">
+                                <img src="https://th.bing.com/th/id/OIP.GHGGLYe7gDfZUzF_tElxiQHaHa?w=200&h=200&c=7&r=0&o=5&cb=10&dpr=1.1&pid=1.7"
+                                    alt="img">
+                                <div class="content">
+                                    <h2>USER 3</h2>
+                                    <button class="appointment-button"
+                                        onclick="acceptRequest('P3', 'dietReview')">Accept</button>
+                                    <button class="view-profile-button" onclick="declineRequest('P3')">Decline</button>
+                                </div>
+                            </div>
+                            <div class="patientcard" id="request-patient-P3">
+                                <img src="https://th.bing.com/th/id/OIP.GHGGLYe7gDfZUzF_tElxiQHaHa?w=200&h=200&c=7&r=0&o=5&cb=10&dpr=1.1&pid=1.7"
+                                    alt="img">
+                                <div class="content">
+                                    <h2>USER 4</h2>
+                                    <button class="appointment-button"
+                                        onclick="acceptRequest('P3', 'dietReview')">Accept</button>
+                                    <button class="view-profile-button" onclick="declineRequest('P3')">Decline</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
             </div>
         </section>
         <section class="mainpatient">
-        <section class="left-section">
-
-
-            <section >
-
-                <div>
-                    <h1>
-                        Connected Patients
-                    </h1>
-                </div>
-                <div class="patientcard" th:each="patient:${allpatientlist}">
-                    <img src="https://th.bing.com/th/id/OIP.GHGGLYe7gDfZUzF_tElxiQHaHa?w=200&h=200&c=7&r=0&o=5&cb=10&dpr=1.1&pid=1.7" alt="img">
-                    <div class="content">
-                        <h2 th:text="${patient.name}"></h2>
-                        <a href="viewpatientdata"><button class="appointment-button">View Profile</button></a>
-                        <button class="view-profile-button">Remove</button>
-
+            <section style="display: grid; grid-template-columns: 2fr 2fr 2fr;">
+                <section>
+                    <div class="left-section">
+                        <div>
+                            <h1>Connected Patients</h1>
+                        </div>
+                        <div class="patient-list" id="connected-patient-list">
+                            <p>No User Connected Yet</p>
+                        </div>
                     </div>
-
-                </div>
-
-            </section>
-            <section >
-
-                <div>
-                    <h1>
-                        Appointed Patients
-                    </h1>
-                </div>
-                <div class="patientcard" th:each="patient:${allpatientlist}">
-                    <img src="https://th.bing.com/th/id/OIP.GHGGLYe7gDfZUzF_tElxiQHaHa?w=200&h=200&c=7&r=0&o=5&cb=10&dpr=1.1&pid=1.7" alt="img">
-                    <div class="content">
-                        <h2 th:text="${patient.name}"></h2>
-                        <a href="viewpatientdata"><button class="appointment-button">View Profile</button></a>
-                        <button class="view-profile-button">Remove</button>
-
+                </section>
+                <section>
+                    <div class="left-section">
+                        <div>
+                            <h1>Appointed Patients</h1>
+                        </div>
+                        <div class="patient-list" id="appointed-patient-list">
+                            <p>No Appointment Pending Yet</p>
+                        </div>
                     </div>
-
-                </div>
-
+                </section>
+                
+                    <div class="left-section">
+                        <div>
+                            <h1>Diet Review</h1>
+                        </div>
+                        <div class="patient-list" id="dietReview-patient-list">
+                            <p>No Review Pending Yet</p>
+                        </div>
+                    </div>
+                </section>
             </section>
-
+            <section class="right-section">
+            </section>
         </section>
-        <section class="right-section">
-            <h1>
-               
-            </h1>
-        </section>
-    </section>
-
     </main>
 
-    
+    <script>
+        function acceptRequest(patientId, type) {
+            const requestCard = document.getElementById(`request-patient-${patientId}`);
+            const patientName = requestCard.querySelector('h2').textContent;
+
+            // Remove the request card
+            requestCard.remove();
+
+            // Determine which section to append the new card
+            let sectionSelector;
+            if (type === 'generate') {
+                sectionSelector = '#connected-patient-list';
+            } else if (type === 'appointment') {
+                sectionSelector = '#appointed-patient-list';
+            } else if (type === 'dietReview') {
+                sectionSelector = '#dietReview-patient-list';
+            }
+
+            // Create a new patient card for the corresponding section
+            const section = document.querySelector(sectionSelector);
+            const noPatientsMessage = section.querySelector('p');
+            if (noPatientsMessage) {
+                noPatientsMessage.remove();
+            }
+
+            const newCard = document.createElement('div');
+            newCard.classList.add('patientcard');
+            newCard.id = `${type}-patient-${patientId}`;
+            newCard.innerHTML = `
+                <img src="https://th.bing.com/th/id/OIP.GHGGLYe7gDfZUzF_tElxiQHaHa?w=200&h=200&c=7&r=0&o=5&cb=10&dpr=1.1&pid=1.7" alt="img">
+                <div class="content">
+                    <h2>${patientName}</h2>
+                    <a href="viewpatientdata"><button class="appointment-button">View</button></a>
+                    <button class="view-profile-button" onclick="removePatient('${type}', '${patientId}')">Remove</button>
+                </div>
+            `;
+            section.appendChild(newCard);
+
+            // Check if the section is now empty and remove the "No requests available" message if present
+            const requestContainer = document.getElementById(`${type}-request-container`);
+            if (!requestContainer.children.length) {
+                requestContainer.innerHTML = '<p>No requests available</p>';
+            }
+
+            // Optionally, make an API call to update the backend
+            // fetch(`/api/acceptRequest/${patientId}`, { method: 'POST' });
+        }
+
+        function declineRequest(patientId) {
+            const requestCard = document.getElementById(`request-patient-${patientId}`);
+            requestCard.remove();
+
+            // Optionally, make an API call to update the backend
+            // fetch(`/api/declineRequest/${patientId}`, { method: 'POST' });
+
+            // Check if the section is now empty and add the "No requests available" message if empty
+            const requestContainer = requestCard.parentElement;
+            if (!requestContainer.children.length) {
+                requestContainer.innerHTML = '<p>No requests available</p>';
+            }
+        }
+
+        function removePatient(type, patientId) {
+            const patientCard = document.getElementById(`${type}-patient-${patientId}`);
+            patientCard.remove();
+
+            // Optionally, make an API call to update the backend
+            // fetch(`/api/removePatient/${type}/${patientId}`, { method: 'POST' });
+
+            // Check if the section is now empty and add the "No patients available" message if empty
+            const patientList = document.getElementById(`${type}-patient-list`);
+            if (!patientList.children.length) {
+                patientList.innerHTML = '<p>No patients available</p>';
+            }
+        }
+    </script>
 
 </body>
 

@@ -1,0 +1,379 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User Profile and Settings</title>
+    <style>
+        body {
+            font-family: sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+
+        /* Profile Information CSS */
+        #profile-info {
+            padding: 20px;
+            text-align: center;
+        }
+
+        #profile-info h1 {
+            text-align: center;
+        }
+
+        #profile-info p {
+            font-size: 0.8em;
+            margin-bottom: 10px;
+        }
+
+        #profile-info form {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+
+        #profile-info section {
+            border-bottom: 1px solid #ccc;
+            padding-bottom: 10px;
+        }
+
+        #profile-info h2 {
+            margin-top: 0;
+        }
+
+        #profile-info img {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            display: block;
+            margin: 0 auto;
+            margin-bottom: 10px;
+        }
+
+        #profile-info input[type="text"],
+        #profile-info input[type="date"] {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+
+        #profile-info button {
+            background-color: #0080ff;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            align-self: flex-end;
+        }
+
+        /* Contact Information CSS */
+        #contact-info {
+            padding: 20px;
+        }
+
+        #contact-info h1 {
+            text-align: center;
+        }
+
+        #contact-info p {
+            font-size: 0.8em;
+            margin-bottom: 10px;
+        }
+
+        #contact-info form {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+
+        #contact-info section {
+            border-bottom: 1px solid #ccc;
+            padding-bottom: 10px;
+        }
+
+        #contact-info h2 {
+            margin-top: 0;
+        }
+
+        #contact-info label {
+            display: block;
+            margin-bottom: 5px;
+        }
+
+        #contact-info input[type="text"],
+        #contact-info input[type="email"],
+        #contact-info input[type="tel"] {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+
+        #contact-info button {
+            background-color: #0080ff;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            align-self: flex-end;
+        }
+
+        /* Address Information CSS */
+        #address-info {
+            padding: 20px;
+        }
+
+        #address-info header {
+            background-color: #4285F4;
+            color: white;
+            padding: 20px;
+            display: flex;
+            align-items: center;
+        }
+
+        #address-info header img {
+            width: 100px;
+            height: auto;
+        }
+
+        #address-info h1 {
+            margin-left: 20px;
+        }
+
+        #address-info main {
+            padding: 20px;
+        }
+
+        .user-info {
+            border: 1px solid #ddd;
+            padding: 20px;
+            margin-bottom: 20px;
+        }
+
+        .user-info h2 {
+            margin-bottom: 10px;
+        }
+
+        .user-info p {
+            margin-bottom: 10px;
+        }
+
+        .user-info ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .user-info li {
+            margin-bottom: 10px;
+            display: flex;
+            align-items: center;
+        }
+
+        .address-label {
+            flex: 1;
+            font-weight: bold;
+        }
+
+        .address-value,
+        .address-controls {
+            flex: 1;
+            text-align: right;
+        }
+
+        .address-controls a {
+            color: #4285F4;
+            text-decoration: none;
+        }
+
+        .address-controls a:hover {
+            text-decoration: underline;
+        }
+
+        /* Security Settings CSS */
+        #security-settings {
+            margin: 50px auto;
+            border: 1px solid #ddd;
+            padding: 20px;
+            border-radius: 5px;
+            width: 600px;
+        }
+
+        #security-settings h1 {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        .setting {
+            margin-bottom: 20px;
+        }
+
+        .setting h2 {
+            font-size: 18px;
+            margin-bottom: 5px;
+        }
+
+        .setting p {
+            margin-bottom: 0;
+        }
+
+        .setting p:last-child {
+            text-align: right;
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- Profile Information Section -->
+    <section th:include="fragments/doctornavbar">
+
+    </section>
+    <section id="profile-info" >
+        <p style="font-size: 30px; margin-top: 20px; font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif; font-weight: 700;">Welcome to SmartDietary</p>
+        <div>
+            <img src="image/profile.png" alt="Profile Picture">
+
+        </div>
+        <div style="margin-top: 30px;">
+            <h1>Name : D1</h1>
+           
+
+            <section>
+                <h2>Username : d1surname</h2>
+            </section>
+
+        </div>
+
+
+    </section>
+
+    <!-- Contact Information Section -->
+    <section id="address-info">
+        <header>
+
+        </header>
+        <main>
+
+            <h1 style="margin-bottom: 30px; margin-left: -10px;">Your Contact Info</h1>
+
+
+            <section class="user-info">
+                <h2>Email Address</h2>
+
+                <p>D1surname@gmail.com</p>
+            </section>
+            <section class="user-info">
+                <h2>Phone Number</h2>
+
+                <p>753894XXXX</p>
+            </section>
+
+
+        </main>
+    </section>
+
+    <!-- Address Information Section -->
+    <section id="address-info">
+        <header>
+
+        </header>
+        <main>
+            <section class="user-info">
+                <h2>Your Addresses</h2>
+                <p>23A,XYZ,ABC Colony,Indore (M.P.) </p>
+                <p>You can also add addresses to your Google Profile. You can choose if others see your profile
+                    addresses.</p>
+
+            </section>
+        </main>
+        <!-- <header>
+
+        </header>
+        <main>
+            <section class="user-info">
+                <h2>My Diet Plan</h2>
+
+
+            </section>
+        </main> -->
+        <header>
+
+        </header>
+        <main>
+            <section class="user-info">
+                <h2>Patient Interaction</h2>
+                <section class="user-info"
+                    style="width: fit-content; display: grid; grid-template-columns: 2fr 2fr 3fr 1fr;">
+                    <div>
+                        <img src="Image/profile.png" style="margin-top: 20px;" alt="" width="100px" height="100px ">
+                    </div>
+                    <div>
+                        <h1 style="font-size: 30px; margin-top: 40px;">USER 1</h1>
+                    </div>
+                    <div>
+                        <p style="font-size: 15px; margin-top: 50px;">Date: 09/01/2024</p>
+                    </div>
+                    <div>
+                        <button style="margin-top: 40px;">View Details</button>
+                    </div>
+
+
+                </section>
+                <section class="user-info"
+                    style="width: fit-content; display: grid; grid-template-columns: 2fr 2fr 3fr 1fr;">
+                    <div>
+                        <img src="Image/profile.png" style="margin-top: 20px;" alt="" width="100px" height="100px ">
+                    </div>
+                    <div>
+                        <h1 style="font-size: 30px; margin-top: 40px;">USER 2</h1>
+                    </div>
+                    <div>
+                        <p style="font-size: 15px; margin-top: 50px;">Date: 09/03/2024</p>
+                    </div>
+                    <div>
+                        <button style="margin-top: 40px;">View Details</button>
+                    </div>
+
+
+                </section>
+                <section class="user-info"
+                    style="width: fit-content; display: grid; grid-template-columns: 2fr 2fr 3fr 1fr;">
+                    <div>
+                        <img src="Image/profile.png" style="margin-top: 20px;" alt="" width="100px" height="100px ">
+                    </div>
+                    <div>
+                        <h1 style="font-size: 30px; margin-top: 40px;">USER 3</h1>
+                    </div>
+                    <div>
+                        <p style="font-size: 15px; margin-top: 50px;">Date: 09/05/2024</p>
+                    </div>
+                    <div>
+                        <button style="margin-top: 40px;">View Details</button>
+                    </div>
+
+
+                </section>
+
+
+
+
+            </section>
+        </main>
+
+
+    </section>
+    <section th:insert="fragments/footer">
+
+
+    </section>
+
+
+
+</body>
+
+</html>

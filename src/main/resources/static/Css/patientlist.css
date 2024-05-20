@@ -4,15 +4,16 @@
   box-shadow: 0 4px 8px rgb(0 0 0 / 41%);
   /* Adjust shadow as needed */
   padding: 20px;
-  width: 60%;
+  width: 100%;
   /* Adjust width as needed */
-  margin-left: 5%;
+  margin-left: 0%;
   margin-top: 3%;
   padding-right: 175px;
 
   display: flex;
   align-items: center;
   margin-bottom: 31px;
+  
 }
 
 .patientcard-content {
@@ -32,6 +33,9 @@
 
 .mainpatient {
   display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  padding: 38px 0;
 }
 
 .left-section {
@@ -46,6 +50,16 @@
   border-block-width: 10px;
   margin-top: 20px;
   margin-left: 20px;
+
+}
+.bordering{
+  border-style: solid;
+  border-color: #3498dbcf;
+  border-radius: 10px;
+  box-shadow: brown;
+  border-block-width: 10px;
+  margin-left: 5px;
+    margin-right: 5px;
 }
 
 .right-section {
@@ -108,10 +122,13 @@
 }
 
 .description-container h1 {
-  font-size: 22px;
-  font-family: monospace;
-  margin-bottom: 20px;
-  margin-left: -417px;
+  font-size: 23px;
+    font-family: monospace;
+    margin-bottom: 36px;
+    margin-left: 3px;
+    margin-top: 20px;
+    color: indigo;
+    font-weight: bold;
 }
 
 .description-container p {

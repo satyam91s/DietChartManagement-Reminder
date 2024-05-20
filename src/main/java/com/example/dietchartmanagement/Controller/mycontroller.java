@@ -30,6 +30,11 @@ public class mycontroller {
     public String welcome() {
         return "welcome";
     }
+    @RequestMapping("/firsthome")
+    public String firsthome() {
+        return "firsthome";
+    }
+
     @RequestMapping("/home")
     public String home(){
         return "home";
@@ -38,7 +43,7 @@ public class mycontroller {
     @GetMapping("/profile")
     public String viewHomePage(Model model) {
         model.addAttribute("allemplist", bs.getAllEmployee());
-        return "profile";
+        return "profilee";
     }
 
     // User details controller start
@@ -58,7 +63,7 @@ public class mycontroller {
     @PostMapping("/save")
     public String saveEmployee(@ModelAttribute("user") user user) {
         bs.save(user);
-        return "redirect:/";
+        return "redirect:/login";
     }
 
     // User details controller end
@@ -88,6 +93,11 @@ public class mycontroller {
     public String contact() {
 
         return "contact";
+    }
+    @GetMapping("/reminder")
+    public String reminder() {
+
+        return "Notavailable";
     }
 
 

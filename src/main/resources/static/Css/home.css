@@ -468,6 +468,7 @@ button:hover {
   border-style: solid;
   border-left: #fff;
   border-right: #fff;
+  display: flex;
 
 }
 

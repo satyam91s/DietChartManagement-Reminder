@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Appointment Form</title>
+    <style>
+        body{
+            background-color: #3498db;
+
+        }
+        .customform {
+            font-family: Arial, sans-serif;
+            background-color: #3498db;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 50%;
+            margin: 0;
+        }
+
+        form {
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            width: 595px;
+            margin-top: 68px;
+        }
+
+        form > div {
+            margin-bottom: 15px;
+        }
+
+        label {
+            display: inline-block;
+            width: 150px;
+            font-weight: bold;
+        }
+
+        input, select {
+            width: calc(100% - 160px);
+            padding: 8px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            box-sizing: border-box;
+        }
+
+        button {
+            background-color: #4CAF50;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+
+        button:hover {
+            background-color: #45a049;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <!-- navbar starts -->
+        <section th:include="fragments/navbar">
+    
+        </section>
+        <!-- navbar ends -->
+      </header>
+      <section class="customform">
+
+      
+    <form id="appointmentForm" th:action="@{/submit}" >
+        <div>
+            <label for="name">Name:</label>
+            <input type="text" id="name" name="name" required>
+        </div>
+        <div>
+            <label for="age">Age:</label>
+            <input type="number" id="age" name="age" required>
+        </div>
+        <div>
+            <label for="height">Height (cm):</label>
+            <input type="number" id="height" name="height" required>
+        </div>
+        <div>
+            <label for="gender">Gender:</label>
+            <select id="gender" name="gender" required>
+                <option value="male">Male</option>
+                <option value="female">Female</option>
+                <option value="other">Other</option>
+            </select>
+        </div>
+        <div>
+            <label for="healthCondition">Health Condition:</label>
+            <select id="healthCondition" name="healthCondition" onchange="checkHealthCondition(this.value)" required>
+                <option value="">Select</option>
+                <option value="highBloodPressure">High Blood Pressure</option>
+                <option value="diabetes">Diabetes</option>
+                <option value="aids">Aids</option>
+            </select>
+        </div>
+        <div>
+            <button type="submit">Submit</button>
+        </div>
+    </form>
+</section>
+
+    <section th:insert="fragments/footer"> 
+
+    </section>
+    <script>
+        function checkHealthCondition(value) {
+            if (value === "highBloodPressure") {
+                document.getElementById("appointmentForm").action = "/bpdiet";
+            } else if (value === "diabetes") {
+                document.getElementById("appointmentForm").action = "/diabetesdiet";
+            } else if (value === "aids") {
+                document.getElementById("appointmentForm").action = "/aidsdiet";
+            } else {
+                document.getElementById("appointmentForm").action = "/submit";
+            }
+        }
+    </script>
+</body>
+</html>

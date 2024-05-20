@@ -38,4 +38,10 @@ public class dietcontroller {
         return "redirect:/dietdata";
  
     }
+    @GetMapping("/customform")
+    public String customform() {
+        
+        return "customdata/customform";
+ 
+    }
 }

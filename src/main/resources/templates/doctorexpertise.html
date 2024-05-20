@@ -19,8 +19,17 @@
     </section>
     <!-- navbar ends -->
   </header>
+  <section class="requeststatusbox">
 
-  <section class="doctorcard" th:each="doctor:${alldoctorlist}">
+    <h2 class="hh2">Specialists Doctors</h2>
+    </section>
+<div th:each="doctor:${alldoctorlist}">
+
+  
+<div class="gridcss">
+<div>
+  
+  <section class="doctorcard" >
     <div class="section">
       <img src="https://tse1.mm.bing.net/th/id/OIP.hIuJO0PIE2kRkLgyTLis5AHaFj?w=275&h=206&c=7&r=0&o=5&dpr=1.1&pid=1.7"
         alt="Dr. Abhishek Shitole">
@@ -37,10 +46,40 @@
 
     <div class="section">
       <button class="appointment-button" data-toggle="modal" data-target="#addModal">Request an Appointment</button>
-      <button class="view-profile-button">View Profile</button>
+      <a href="doctorprofile"><button class="view-profile-button">View Profile</button></a>
 
     </div>
   </section>
+</div>
+<div>
+  <section class="page-body">
+    <div class="status-container">
+      <h1 class="main-title">Appointment Status</h1>
+      <div class="request">
+          <div class="request-info" th:each="appoint:${showappoint}">
+              <span class="request-id" th:text="Appointment ID :+${appoint.appointment_no}" >Appointment ID: 789012</span>
+              <span class="request-id" th:text="Doctor ID :+${appoint.doctor_id}" ></span>
+              <span class="request-id" th:text="Name :+${appoint.name}" ></span>
+              <span class="request-id" th:text="Email :+${appoint.email}" ></span>
+              <span class="request-id" th:text="Requested Slot :+${appoint.slot}" ></span>
+              <span class="request-id" th:text="Problem :+${appoint.message}" ></span>
+              <span class="date-time" th:text="Date & Time : +${currentDateTime}">Date: 2024-05-20 | Time: 11:45 AM</span>
+              <button><a th:href="deleteappoint/{id}(value=${appoint.id})">Cancel</a></button>
+          </div>
+          <span class="status">Pending</span>
+      </div>
+      <div class="request">
+          <div class="request-info">
+              <span class="request-id">Appointment ID: 789012</span>
+              <span class="date-time">Date: 2024-04-12 | Time: 11:45 AM</span>
+          </div>
+          <span class="status">Completed</span>
+      </div>
+      <!-- Add more request status blocks here -->
+  </div>
+  </section>
+</div>
+</div>
   <!-- Add New Modal -->
 <div class="modal fade" id="addModal" tabindex="-1" role="dialog" aria-labelledby="addModalLabel" aria-hidden="true">
   <div class="modal-dialog" role="document">
@@ -53,47 +92,89 @@
       </div>
       <div class="modal-body">
         <!-- Add your form for adding new records here -->
-        <form th:action="@{/appointreq}" th:object="${appointment}" method="POST" id="appointmentForm">
+        <form th:action="@{/appointsave}" th:object="${appointment}" method="post" id="appointmentForm">
+        <div >
           <div class="form-group">
             <!-- Hidden input field for appointment number -->
             <label for="appointmentNumber">Appointment No.</label>
-            <input type="text" class="form-control" id="appointmentNumber" name="appointmentNumber" th:value="${appointmentNumber}" />
+            <input type="text" th:field="*{appointment_no}" class="form-control" id="appointmentNumber" name="appointmentNumber" th:value="${appointmentNumber}" />
           </div>
           <div class="form-group">
             <!-- Hidden input field for doctor ID -->
             <label for="doctorId">Doctor Id</label>
-            <input type="text" class="form-control" id="doctorId" name="doctorId" th:value="${doctorId}" />
+            <input type="text"  class="form-control" id="doctorId" name="doctorId" th:value="${doctor.id}" />
           </div>
+        </div>
           <div class="form-group">
             <label for="name">Name</label>
-            <input type="text" class="form-control" id="name" name="name" placeholder="Enter Your Name">
+            <input type="text" th:field="*{name}" class="form-control" id="name" name="name" placeholder="Enter Your Name">
           </div>
           <div class="form-group">
             <label for="email">Email</label>
-            <input type="email" class="form-control" id="email" name="email" placeholder="Enter Your Email">
+            <input type="email" th:field="*{email}" class="form-control" id="email" name="email" placeholder="Enter Your Email">
           </div>
-          <div style="display: grid; grid-template-columns: 1fr 1fr;">
+          <div>
             <div class="form-group">
-              <label for="contact">Contact</label>
-              <input type="text" class="form-control" id="contact" name="contact" placeholder="Enter Your Contact">
+              <label for="contact" >Contact</label>
+              <input type="text"  th:field="*{contact}" class="form-control" id="contact" name="contact" placeholder="Enter Your Contact">
             </div>
-            <div class="form-group">
-              <label for="slot">Select Slot</label>
-              <select class="form-control" id="slot" name="slot">
-                <option value="slot1">Slot 1</option>
-                <option value="slot2">Slot 2</option>
-                <option value="slot3">Slot 3</option>
-                <!-- Add more slot options as needed -->
-              </select>
-            </div> 
 
           </div>
          
           <div class="form-group">
             <label for="message">Message</label>
-            <textarea class="form-control" id="message" name="message" rows="3" placeholder="Enter Your Message"></textarea>
+            <textarea class="form-control" th:field="*{message}" id="message" name="message" rows="3" placeholder="Enter Your Message"></textarea>
           </div>
          
+          <button type="submit" class="btn btn-primary">Submit</button>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- Shift and Slot Selection Modal -->
+<div class="modal fade" id="shiftSlotModal" tabindex="-1" role="dialog" aria-labelledby="shiftSlotModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="shiftSlotModalLabel">Select Shift and Slot</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <form id="shiftSlotForm" th:action="@{/slotsave}" th:object="${slot}" method="POST">
+          <!-- Pre-filled fields for appointment number, doctor ID, and date & time -->
+          <div class="form-group">
+            <label for="appointmentNumberSlot">Appointment No.</label>
+            <input type="text" th:field="*{appointment_no}" class="form-control" id="appointmentNumberSlot" name="appointmentNumber" readonly>
+          </div>
+          <div class="form-group">
+            <label for="doctorIdSlot">Doctor ID</label>
+            <input type="text" th:field="*{doctor_id}" class="form-control" id="doctorIdSlot" name="doctorId" readonly>
+          </div>
+          <div class="form-group">
+            <label for="dateTimeSlot">Date & Time</label>
+            <input type="text" th:field="*{date_time}" class="form-control" id="dateTimeSlot" name="dateTimeSlot" readonly>
+          </div>
+          <!-- Form fields for selecting shift and slot -->
+          <div class="form-group">
+            <label for="shift">Select Shift:</label>
+            <select class="form-control" th:field="*{select_shift}" id="shift" name="shift">
+              <option value="morning">Morning</option>
+              <option value="evening">Evening</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label for="slot">Select Slot:</label>
+            <select class="form-control" th:field="*{select_slot}" id="slot" name="slot">
+              <option value="" disabled selected hidden>-- Select Slot --</option>
+              <option value="slot1">Slot 1</option>
+              <option value="slot2" disabled class="unselectable">Slot 2</option>
+              <option value="slot2">Slot 3</option>
+              
+            </select>
+          </div>
           <button type="submit" class="btn btn-primary">Submit</button>
         </form>
       </div>
@@ -116,13 +197,32 @@
     </div>
   </div>
 </div>
+</div>
 
 <script>
   // Function to handle form submission
   function submitForm() {
     // Here, you would have your form submission logic
-    // After successful submission, hide the form modal and show the success modal
+    // After successful submission, hide the form modal and show the slot selection modal
     $('#addModal').modal('hide');
+    $('#shiftSlotModal').modal('show');
+
+    // Get the appointment number, doctor ID, and current date & time from the form
+    var appointmentNumber = document.getElementById('appointmentNumber').value;
+    var doctorId = document.getElementById('doctorId').value;
+    var dateTime = new Date().toLocaleString();
+
+    // Set the appointment number, doctor ID, and date & time in the slot selection modal
+    document.getElementById('appointmentNumberSlot').value = appointmentNumber;
+    document.getElementById('doctorIdSlot').value = doctorId;
+    document.getElementById('dateTimeSlot').value = dateTime;
+  }
+
+  // Function to handle form submission for shift and slot selection
+  function submitShiftSlotForm() {
+    // Here, you would have your form submission logic for shift and slot selection
+    // After successful submission, hide the slot selection modal and show the success modal
+    $('#shiftSlotModal').modal('hide');
     $('#successModal').modal('show');
   }
 
@@ -130,8 +230,16 @@
   document.getElementById('appointmentForm').addEventListener('submit', function(event) {
     // Prevent the default form submission behavior
     event.preventDefault();
-    // Call the function to handle form submission
+    // Call the function to handle appointment form submission
     submitForm();
+  });
+
+  // Add event listener to the shift and slot selection form submission
+  document.getElementById('shiftSlotForm').addEventListener('submit', function(event) {
+    // Prevent the default form submission behavior
+    event.preventDefault();
+    // Call the function to handle shift and slot selection form submission
+    submitShiftSlotForm();
   });
 </script>
   <section th:insert="fragments/footer">

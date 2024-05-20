@@ -15,9 +15,12 @@
     </section>
     <!-- navbar ends -->
     </header>
+    <div class="gridcss">
+    <div>
+
     <section class="requeststatusbox">
 
-      <h2>Request Status</h2>
+      <!-- <h2>Request Status</h2>
 
       </div>
       <div class="request-card" th:each="request:${request}">
@@ -26,10 +29,10 @@
             <p th:text="'Date : 03-04-2024'"></p>
         </div>
         <div class="request-status" th:text="'Pending'"></div>
-    </div>
+    </div> -->
       
 
-    <h2>Diet Specialists</h2>
+    <h2 class="hh2">Diet Specialists</h2>
     </section>
   
   <section class="doctorcard" th:each="doctor:${alldoctorlist}" >
@@ -51,6 +54,31 @@
 
     </div>
   </section>
+</div>
+<div>
+  
+  <section class="page-body">
+    <div class="status-container">
+      <h1 class="main-title">Request Status</h1>
+      <div class="request">
+          <div class="request-info">
+              <span class="request-id">Request ID: 123456</span>
+              <span class="date-time">Date: 2024-04-12 | Time: 10:30 AM</span>
+          </div>
+          <span class="status">Pending</span>
+      </div>
+      <!-- <div class="request">
+          <div class="request-info">
+              <span class="request-id">Request ID: 789012</span>
+              <span class="date-time">Date: 2024-04-12 | Time: 11:45 AM</span>
+          </div>
+          <span class="status">Completed</span>
+      </div>
+      Add more request status blocks here -->
+  </div>
+  </section>
+</div>
+</div>
   <section th:insert="fragments/footer"> 
 
   </section>
